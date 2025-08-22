@@ -1,237 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The VK Store - Your One-Stop Shop for Snacks & More</title>
-    <meta name="description" content="The VK Store - Your one-stop shop for tasty snacks, namkeens, and essential products. Best quality products with special discounts.">
+    <title>The VK Store – Premium Snacks, Namkeens & Branded Essentials</title>
+    <meta name="description"
+        content="The VK Store: One-stop shop for namkeens, snacks, masalas, pickles, papads, and branded bulk products. Flat 5% discount on special occasions.">
+    <meta name="theme-color" content="#ff6b6b">
+    <meta property="og:title" content="The VK Store – Premium Snacks & Essentials">
+    <meta property="og:description"
+        content="Shop namkeens, masalas, pickles, papads, and branded bulk products. Flat 5% discount on special occasions. Order on WhatsApp instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero-bg1.jpg">
+    <meta property="og:url" content="https://thevkstore.example.com">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <div class="contact-info">
-                        <span><i class="fas fa-phone-alt"></i> +91 8866791095</span>
-                        <span><i class="far fa-clock"></i> Open: 9:00 AM - 9:00 PM</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/918866791095" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <nav class="nav-container">
-            <div class="logo">
+            <!-- Logo -->
+            <a href="#home" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-store"></i>
                 </div>
                 <div class="logo-text">
-                    <span class="main-logo">The VK Store</span>
-                    <span class="tagline">Your Trusted Snacks & Grocery Partner</span>
+                    <h1 class="main-logo">The VK Store</h1>
+                    <p class="tagline">Your Trusted Snacks & Grocery Partner</p>
                 </div>
-            </div>
+            </a>
+
+            <!-- Navigation -->
             <div class="nav-links" id="navLinks">
-                <i class="fas fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#products"><i class="fas fa-shopping-basket"></i> Our Products</a></li>
-                    <li><a href="#branded"><i class="fas fa-tags"></i> Branded Products</a></li>
-                    <li><a href="#offers"><i class="fas fa-gift"></i> Special Offers</a></li>
-                    <li><a href="#contact"><i class="fas fa-headset"></i> Contact</a></li>
+                <button class="close-menu" onclick="hideMenu()" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">
+                            <i class="fas fa-shopping-basket"></i>
+                            <span>Our Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#branded" class="nav-link">
+                            <i class="fas fa-tags"></i>
+                            <span>Branded</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#offers" class="nav-link">
+                            <i class="fas fa-gift"></i>
+                            <span>Offers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <i class="fas fa-headset"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="nav-cta">
+
+            <div class="desktop-order">
                 <a href="https://wa.me/918866791095" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Order Now
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Order Now</span>
                 </a>
-                <i class="fas fa-bars menu-toggle" onclick="showMenu()"></i>
             </div>
+
+            <button class="menu-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-slider">
-            <div class="slide active" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg1.jpg') center/cover no-repeat;">
-                <div class="hero-content">
-                    <span class="hero-subtitle">Welcome to The VK Store</span>
-                    <h1>Premium Quality <span>Snacks & Groceries</span> Delivered to Your Doorstep</h1>
-                    <p>Discover our wide range of delicious namkeens, branded products, and daily essentials at the best prices</p>
-                    <div class="hero-btns">
-                        <a href="#products" class="cta-button">Shop Now <i class="fas fa-arrow-right"></i></a>
-                        <a href="#offers" class="cta-button secondary">Special Offers <i class="fas fa-gift"></i></a>
+            <!-- Slide 1 -->
+            <div class="slide active"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg1.jpg') center/cover no-repeat;">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">Welcome to The VK Store</span>
+                        <h1>Premium Quality <span>Snacks & Groceries</span> Delivered to Your Doorstep</h1>
+                        <p class="hero-description">Discover our wide range of delicious namkeens, branded products, and
+                            daily essentials at the best prices</p>
+                        <div class="hero-btns">
+                            <a href="#products" class="cta-button primary">
+                                <span>Shop Now</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#offers" class="cta-button secondary">
+                                <i class="fas fa-gift"></i>
+                                <span>Special Offers</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="slide" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg2.jpg') center/cover no-repeat;">
-                <div class="hero-content">
-                    <span class="hero-subtitle">Special Discount</span>
-                    <h1>Get <span>5% OFF</span> on Special Occasions</h1>
-                    <p>Birthday celebrations, purchases for needy people, bird feed, or any special occasion</p>
-                    <a href="#offers" class="cta-button">Learn More <i class="fas fa-arrow-right"></i></a>
+
+            <!-- Slide 2 -->
+            <div class="slide"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg2.jpg') center/cover no-repeat;">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">Special Discount</span>
+                        <h1>Get <span>5% OFF</span> on Special Occasions</h1>
+                        <p class="hero-description">Birthday celebrations, purchases for needy people, bird feed, or any
+                            special occasion</p>
+                        <div class="hero-btns">
+                            <a href="#offers" class="cta-button primary">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-features">
-            <div class="feature">
-                <div class="feature-icon">
-                    <i class="fas fa-truck"></i>
-                </div>
-                <div class="feature-text">
-                    <h4>Fast Delivery</h4>
-                    <p>Quick delivery to your doorstep</p>
-                </div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">
-                    <i class="fas fa-rupee-sign"></i>
-                </div>
-                <div class="feature-text">
-                    <h4>Best Price</h4>
-                    <p>Competitive prices for all products</p>
-                </div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="feature-text">
-                    <h4>24/7 Support</h4>
-                    <p>Dedicated support via WhatsApp</p>
-                </div>
-            </div>
-        </div>
+
+
+
     </section>
+
+    <!-- Features Bar (moved below hero) -->
+    <div class="features-bar">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="feature-title">Fast Delivery</h4>
+                        <p class="feature-text">Quick delivery to your doorstep</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="feature-title">Best Price</h4>
+                        <p class="feature-text">Competitive prices for all products</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="feature-title">24/7 Support</h4>
+                        <p class="feature-text">Dedicated support via WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Products Section -->
-    <section class="products" id="products">
-        <h2>Our Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-icon">
-                    <i class="fas fa-cookie-bite"></i>
-                </div>
-                <h3>Namkeens</h3>
-                <p>Chavana, Ratlami, Gandhiya, and more delicious varieties</p>
+    <section class="products section-padding" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Our Premium Products</h2>
+                <div class="section-divider"></div>
             </div>
-            <div class="product-card">
-                <div class="product-icon">
-                    <i class="fas fa-pepper-hot"></i>
-                </div>
-                <h3>Pickles & Papads</h3>
-                <p>Traditional homemade taste in every bite</p>
+
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <article class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Namkeens</h3>
+                        <p class="product-description">Chavana, Ratlami, Gandhiya, and more delicious varieties</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Fresh & Crispy</li>
+                            <li><i class="fas fa-check"></i> Homemade Taste</li>
+                            <li><i class="fas fa-check"></i> Multiple Varieties</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Product Card 2 -->
+                <article class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Pickles & Papads</h3>
+                        <p class="product-description">Traditional homemade taste in every bite</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Authentic Recipes</li>
+                            <li><i class="fas fa-check"></i> Fresh Ingredients</li>
+                            <li><i class="fas fa-check"></i> Long Shelf Life</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Product Card 3 -->
+                <article class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Kitchen Masalas</h3>
+                        <p class="product-description">Authentic spices for perfect Indian cooking</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Premium Quality</li>
+                            <li><i class="fas fa-check"></i> Rich Aroma</li>
+                            <li><i class="fas fa-check"></i> Traditional Taste</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
-            <div class="product-card">
-                <div class="product-icon">
-                    <i class="fas fa-utensils"></i>
-                </div>
-                <h3>Kitchen Masalas</h3>
-                <p>Authentic spices for perfect Indian cooking</p>
+
+            <div class="section-cta">
+                <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I'm%20interested%20in%20your%20products"
+                    class="cta-button primary">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Enquire About Products</span>
+                </a>
             </div>
+
+
         </div>
     </section>
 
-    <!-- Branded Products -->
-    <section class="branded" id="branded">
-        <h2>Branded Products (Bulk Orders)</h2>
-        <div class="brand-grid">
-            <div class="brand-card">
-                <img src="images/balaji-logo.png" alt="Balaji Products">
-                <h3>Balaji</h3>
+    <!-- Branded Products Section -->
+    <section class="branded section-padding" id="branded">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Bulk & Bunch Packs</span>
+                <h2 class="section-title">Branded Company Products</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">We supply the best brands in bunch/bulk at great prices.</p>
             </div>
-            <div class="brand-card">
-                <img src="images/ramdev-logo.png" alt="Ramdev Products">
-                <h3>Ramdev</h3>
-            </div>
-            <div class="brand-card">
-                <img src="images/parle-logo.png" alt="Parle Products">
-                <h3>Parle</h3>
-            </div>
-            <div class="brand-card">
-                <img src="images/britannia-logo.png" alt="Britannia Products">
-                <h3>Britannia</h3>
-            </div>
-        </div>
-    </section>
 
-    <!-- Special Offers -->
-    <section class="offers" id="offers">
-        <div class="offer-content">
-            <h2>Special 5% Discount</h2>
-            <p>Get a flat 5% discount on your order for:</p>
-            <ul>
-                <li>🎂 Birthday celebrations</li>
-                <li>🤝 Purchases for needy/poor people</li>
-                <li>🐦 Bird feed</li>
-                <li>🎉 Any special occasion</li>
-            </ul>
-            <p class="highlight">Our aim is not just selling products, but helping you spread happiness and kindness.</p>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <h2>Order Now</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p><i class="fas fa-phone"></i> +91 8866791095</p>
-                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918866791095" target="_blank">Chat on WhatsApp</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Your Store Location</p>
+            <div class="brand-grid">
+                <div class="brand-card"><img src="images/brands/balaji.png" alt="Balaji">
+                    <h3>Balaji Products</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/ramdev.png" alt="Ramdev">
+                    <h3>Ramdev Products</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/bhungda.png" alt="Bhungda">
+                    <h3>All Bhungda Types</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/pickles.png" alt="Pickles & Papads">
+                    <h3>Pickles & Papads</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/churan.png" alt="Churan Items">
+                    <h3>Churan Items</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/parle.png" alt="Parle & Britannia">
+                    <h3>Parle & Britannia</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/kissan.png" alt="Kissan Sauce">
+                    <h3>Kissan Tomato Sauce</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/shampoo.png" alt="Shampoos & Conditioners">
+                    <h3>Shampoos & Conditioners</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/masala.png" alt="Kitchen Masalas">
+                    <h3>Home Kitchen Masalas</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/agarbatti.png" alt="Agarbatti">
+                    <h3>Agarbatti (For Prayers)</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/chocolates.png" alt="Chocolates">
+                    <h3>Chocolates Gift Packs</h3>
+                </div>
+                <div class="brand-card"><img src="images/brands/tobacco.png" alt="Tobacco">
+                    <h3>Tobacco Packets</h3>
+                </div>
             </div>
-            <div class="quick-order">
-                <h3>Quick Order</h3>
-                <p>Send us a message on WhatsApp with your order details and we'll get back to you immediately!</p>
-                <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I%20would%20like%20to%20place%20an%20order" class="whatsapp-button" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+
+            <div class="section-cta text-center">
+                <p class="bulk-info">Need branded items in bulk? Message us for best rates.</p>
+                <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I%20want%20branded%20items%20in%20bulk"
+                    class="cta-button primary">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Ask for Bulk Quote</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-newsletter">
-                    <div class="newsletter-text">
-                        <h3>Subscribe to Our Newsletter</h3>
-                        <p>Get updates on special offers and new products</p>
+    <!-- Special Offers -->
+    <section class="offers section-padding bg-gradient" id="offers">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Special Benefits</span>
+                <h2 class="section-title">Exclusive 5% Discount</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="offer-cards">
+                <!-- Offer 1 -->
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-birthday-cake"></i>
                     </div>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit">Subscribe</button>
+                    <h3>Birthday Celebrations</h3>
+                    <p>Make your special day even more memorable with our birthday discount</p>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Helping Hands</h3>
+                    <p>Special pricing for purchases meant for the underprivileged</p>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3>Bird Feed</h3>
+                    <p>Support our feathered friends with discounted bird feed</p>
+                </div>
+
+                <!-- Offer 4 -->
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Special Occasions</h3>
+                    <p>Celebrating something special? We've got you covered</p>
+                </div>
+            </div>
+
+            <div class="offer-cta text-center">
+                <div class="offer-note">
+                    <i class="fas fa-heart"></i>
+                    <p>Our aim is not just selling products, but helping you spread happiness and kindness.</p>
+                </div>
+                <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I'd%20like%20to%20avail%20the%20special%20discount"
+                    class="cta-button white">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Claim Your Discount</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Order Now</h2>
+                <p class="section-description">We're here to serve you with the best products and service</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us through any of these channels</p>
+
+                    <ul class="contact-details">
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Call Us</h4>
+                                <a href="tel:+918866791095">+91 88667 91095</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/918866791095" target="_blank" rel="noopener">Chat Now</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <span>Your Store Location</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <span>Monday - Sunday: 9:00 AM - 9:00 PM</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Order -->
+                <div class="quick-order">
+                    <div class="order-card">
+                        <div class="order-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Quick Order</h3>
+                        <p>Place your order directly through WhatsApp for the fastest service</p>
+
+                        <div class="order-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <p>Send us a message on WhatsApp with your order details</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <p>Our team will confirm your order and share payment details</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <p>Get your order delivered to your doorstep</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I%20would%20like%20to%20place%20an%20order"
+                            class="cta-button primary full-width" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Start Order on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="newsletter-container">
+                    <div class="newsletter-content">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p>Stay updated with our latest products, offers, and news</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="cta-button">
+                                <span>Subscribe</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="form-message" id="newsletterMessage"></div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="footer-main">
+
+        <!-- Main Footer -->
+        <div class="footer-main section-padding">
             <div class="container">
-                <div class="footer-widgets">
-                    <div class="footer-widget about-widget">
+                <div class="footer-grid">
+                    <!-- About Column -->
+                    <div class="footer-column about-column">
                         <div class="footer-logo">
                             <i class="fas fa-store"></i>
                             <span>The VK Store</span>
                         </div>
-                        <p>Your trusted partner for premium quality snacks, groceries, and daily essentials. We deliver happiness to your doorstep!</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="https://wa.me/918866791095" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <p class="footer-about">Your trusted partner for premium quality snacks, groceries, and daily
+                            essentials. We're committed to providing the best products at competitive prices with
+                            excellent customer service.</p>
+
+                        <div class="footer-payment">
+                            <h4>We Accept</h4>
+                            <div class="payment-methods">
+                                <i class="fab fa-cc-visa" title="Visa"></i>
+                                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                                <i class="fab fa-cc-paypal" title="PayPal"></i>
+                                <i class="fas fa-money-bill-wave" title="Cash on Delivery"></i>
+                                <i class="fas fa-mobile-alt" title="UPI"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-widget">
-                        <h3>Quick Links</h3>
-                        <ul>
+                    <!-- Quick Links Column -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Quick Links</h3>
+                        <ul class="footer-links">
                             <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
                             <li><a href="#products"><i class="fas fa-chevron-right"></i> Our Products</a></li>
                             <li><a href="#branded"><i class="fas fa-chevron-right"></i> Branded Products</a></li>
@@ -239,61 +531,82 @@
                             <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                         </ul>
                     </div>
-                    <div class="footer-widget">
-                        <h3>Our Products</h3>
-                        <ul>
+
+                    <!-- Products Column -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Our Products</h3>
+                        <ul class="footer-links">
                             <li><a href="#"><i class="fas fa-chevron-right"></i> Namkeens & Snacks</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Branded Products</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Pickles & Papads</a></li>
                             <li><a href="#"><i class="fas fa-chevron-right"></i> Kitchen Masalas</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Biscuits & Bakery</a></li>
                             <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Care</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Gift Hampers</a></li>
                         </ul>
                     </div>
-                    <div class="footer-widget">
-                        <h3>Contact Info</h3>
-                        <ul class="contact-info">
+
+                    <!-- Contact Info Column -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Contact Info</h3>
+                        <ul class="footer-contact">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Your Store Address, City, State - 123456</span>
                             </li>
                             <li>
                                 <i class="fas fa-phone-alt"></i>
-                                <a href="tel:+918866791095">+91 8866791095</a>
+                                <a href="tel:+918866791095">+91 88667 91095</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@thevkstore.com">info@thevkstore.com</a>
                             </li>
                             <li>
                                 <i class="fab fa-whatsapp"></i>
-                                <a href="https://wa.me/918866791095">Chat on WhatsApp</a>
-                            </li>
-                            <li>
-                                <i class="far fa-envelope"></i>
-                                <a href="mailto:info@thevkstore.com">info@thevkstore.com</a>
+                                <a href="https://wa.me/918866791095" target="_blank" rel="noopener">Chat on WhatsApp</a>
                             </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p>&copy; 2025 The VK Store. All Rights Reserved.</p>
-                    <div class="payment-methods">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fas fa-money-bill-wave"></i>
-                        <i class="fas fa-university"></i>
-                        <i class="fab fa-google-pay"></i>
-                        <i class="fab fa-cc-paypal"></i>
+                    <div class="copyright">
+                        &copy; <span id="current-year">2024</span> The VK Store. All Rights Reserved.
+                    </div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <span class="divider">|</span>
+                        <a href="#">Terms & Conditions</a>
+                        <span class="divider">|</span>
+                        <a href="#">Shipping Policy</a>
+                        <span class="divider">|</span>
+                        <a href="#">Returns & Refunds</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Back to Top Button -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918866791095" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="pulse"></span>
+    </a>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script src="js/script.js"></script>
 </body>
+
 </html>
