@@ -82,12 +82,23 @@ function initCarousel({
         if (cards.length === 0) return;
         
         const card = cards[0];
-        const cardWidth = card.offsetWidth + 20; // 20px gap
+        const cardStyle = window.getComputedStyle(card);
+        const cardWidth = card.offsetWidth + 
+                         parseInt(cardStyle.marginLeft) + 
+                         parseInt(cardStyle.marginRight);
+        
         const containerWidth = carousel.offsetWidth;
         const maxScroll = carousel.scrollWidth - containerWidth;
         
         // Calculate the exact scroll position to show one card at a time
         let scrollPosition = index * cardWidth;
+        
+        // Add some padding to the scroll position on mobile
+        if (window.innerWidth < 768) {
+            scrollPosition = index * (cardWidth + 20); // 20px gap on mobile
+            // Center the card in the viewport on mobile
+            scrollPosition = Math.max(0, scrollPosition - ((containerWidth - cardWidth) / 2));
+        }
         
         // Ensure we don't scroll past the last card
         if (scrollPosition > maxScroll) {
@@ -126,30 +137,85 @@ function initCarousel({
         }
     }
     
-    // Handle touch events
+    // Handle touch events for better mobile swiping
     let touchStartX = 0;
     let touchEndX = 0;
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
     
+    // Prevent default touch actions that could interfere with swiping
+    carousel.style.touchAction = 'pan-y';
+    
+    // Touch start
     carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+        touchStartX = e.touches[0].clientX;
+        startX = e.touches[0].pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        isDragging = true;
+        carousel.style.scrollBehavior = 'auto';
     }, { passive: true });
     
+    // Touch move
+    carousel.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5; // Scroll faster
+        carousel.scrollLeft = scrollLeft - walk;
+    }, { passive: false });
+    
+    // Touch end
     carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
+        isDragging = false;
+        carousel.style.scrollBehavior = 'smooth';
+        
+        touchEndX = e.changedTouches[0].clientX;
+        const swipeThreshold = 30; // Reduced threshold for better mobile experience
+        const swipeDistance = Math.abs(touchEndX - touchStartX);
+        
+        // Only trigger slide change if swipe distance is significant
+        if (swipeDistance > swipeThreshold) {
+            if (touchStartX > touchEndX) {
+                // Swipe left - go to next slide
+                nextSlide();
+            } else {
+                // Swipe right - go to previous slide
+                prevSlide();
+            }
+        } else {
+            // If swipe was too small, snap to the current slide
+            goToSlide(currentIndex);
+        }
     }, { passive: true });
     
-    function handleSwipe() {
-        const swipeThreshold = 50; // Minimum distance to trigger a swipe
-        
-        if (touchStartX - touchEndX > swipeThreshold) {
-            // Swipe left - go to next slide
-            nextSlide();
-        } else if (touchEndX - touchStartX > swipeThreshold) {
-            // Swipe right - go to previous slide
-            prevSlide();
-        }
-    }
+    // Handle mouse events for desktop
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        carousel.style.scrollBehavior = 'auto';
+    });
+    
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+    
+    carousel.addEventListener('mouseup', () => {
+        isDragging = false;
+        carousel.style.scrollBehavior = 'smooth';
+        goToSlide(currentIndex);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        isDragging = false;
+        carousel.style.scrollBehavior = 'smooth';
+        goToSlide(currentIndex);
+    });
     
     // Event listeners
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
@@ -160,7 +226,14 @@ function initCarousel({
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            goToSlide(currentIndex); // Recalculate position on resize
+            // Recalculate current index based on scroll position
+            const cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 0;
+            if (cardWidth > 0) {
+                currentIndex = Math.round(carousel.scrollLeft / cardWidth);
+                currentIndex = Math.min(currentIndex, cards.length - 1);
+                currentIndex = Math.max(0, currentIndex);
+            }
+            goToSlide(currentIndex);
         }, 250);
     });
     

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Products - The VK Store</title>
+    <meta name="description" content="Browse our premium collection of snacks, namkeens, and more at The VK Store.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .premium-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .premium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .premium-img {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+            position: relative;
+        }
+        
+        .premium-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .premium-card:hover .premium-img img {
+            transform: scale(1.05);
+        }
+        
+        .premium-content {
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .premium-content h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: center;
+        }
+        
+        .premium-content p {
+            color: #666;
+            font-size: 0.85rem;
+            margin: 0 0 5px 0;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .premium-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .current-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+        
+        .original-price {
+            font-size: 0.9rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .discount {
+            background: #ffebee;
+            color: #ff6b6b;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .premium-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: auto;
+        }
+        
+        .premium-btn i {
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+        
+        .product-rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars span {
+            color: #666;
+            margin-left: 5px;
+            font-weight: 500;
+        }
+        
+        .reviews {
+            color: #999;
+            font-size: 0.8rem;
+        }
+        
+        .premium-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: auto;
+        }
+        
+        .premium-btn i {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+        
+        .premium-btn.whatsapp-btn {
+            background: #25D366;
+            font-weight: 600;
+        }
+        
+        .premium-btn.whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            display: inline-block;
+            color: #ff6b6b;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin: 20px;
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            color: #ff4f4f;
+        }
+        
+        @media (max-width: 768px) {
+            .premium-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                padding: 15px;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="logo-text">
+                    <h1 class="main-logo">The VK Store</h1>
+                    <p class="tagline">Premium Products Collection</p>
+                </div>
+            </a>
+            <a href="index.html" class="back-to-home">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </nav>
+    </header>
+
+    <!-- Premium Products Grid -->
+    <section class="section-padding">
+        <div class="section-header">
+            <span class="section-subtitle">Premium Collection</span>
+            <h2 class="section-title">All Premium Products</h2>
+        </div>
+        <div class="premium-grid">
+            <!-- Product cards will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        &copy; <span id="current-year">2024</span> The VK Store. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918866791095" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Product data using available images
+            const products = [
+                {
+                    name: 'Bablu Namkeen',
+                    image: 'images/bablu.jpg',
+                    description: 'Premium quality traditional namkeen with authentic flavors',
+                    price: '120',
+                    originalPrice: '150',
+                    discount: '20% OFF',
+                    rating: 4.5,
+                    reviews: 128
+                },
+                {
+                    name: 'Gopal Namkeen',
+                    image: 'images/gopal.png',
+                    description: 'Crunchy and flavorful traditional snack mix',
+                    price: '135',
+                    originalPrice: '170',
+                    discount: '21% OFF',
+                    rating: 4.3,
+                    reviews: 95
+                },
+                {
+                    name: 'Balaji Wafers',
+                    image: 'images/balajiwafers.png',
+                    description: 'Crispy and delicious potato wafers',
+                    price: '20',
+                    originalPrice: '25',
+                    discount: '20% OFF',
+                    rating: 4.7,
+                    reviews: 215
+                },
+                {
+                    name: 'Britannia Biscuits',
+                    image: 'images/britania.png',
+                    description: 'Delicious and crispy biscuits for all occasions',
+                    price: '35',
+                    originalPrice: '45',
+                    discount: '22% OFF',
+                    rating: 4.6,
+                    reviews: 342
+                },
+                {
+                    name: 'Kissan Mixed Fruit Jam',
+                    image: 'images/kissan.png',
+                    description: 'Sweet and fruity mixed fruit jam',
+                    price: '180',
+                    originalPrice: '220',
+                    discount: '18% OFF',
+                    rating: 4.8,
+                    reviews: 278
+                },
+                {
+                    name: 'Mixed Chivda',
+                    image: 'images/mixchavana.webp',
+                    description: 'Crunchy and spicy mixed chivda snack',
+                    price: '150',
+                    originalPrice: '180',
+                    discount: '17% OFF',
+                    rating: 4.4,
+                    reviews: 189
+                },
+                {
+                    name: 'Parle-G Biscuits',
+                    image: 'images/parle.png',
+                    description: 'Classic tea time biscuits loved by all',
+                    price: '10',
+                    originalPrice: '12',
+                    discount: '17% OFF',
+                    rating: 4.7,
+                    reviews: 1562
+                },
+                {
+                    name: 'Ramdev Masala',
+                    image: 'images/ramdev.png',
+                    description: 'Aromatic and flavorful spice mix',
+                    price: '85',
+                    originalPrice: '100',
+                    discount: '15% OFF',
+                    rating: 4.5,
+                    reviews: 231
+                },
+                {
+                    name: 'Ratlami Sev',
+                    image: 'images/ratlami.png',
+                    description: 'Spicy and crispy traditional sev',
+                    price: '110',
+                    originalPrice: '130',
+                    discount: '15% OFF',
+                    rating: 4.6,
+                    reviews: 198
+                },
+                {
+                    name: 'Suhana Paneer Masala',
+                    image: 'images/suhana.jpg',
+                    description: 'Rich and aromatic paneer masala mix',
+                    price: '45',
+                    originalPrice: '55',
+                    discount: '18% OFF',
+                    rating: 4.3,
+                    reviews: 156
+                },
+                {
+                    name: 'Tresemme Shampoo',
+                    image: 'images/tresemme.jpg',
+                    description: 'Professional quality hair care shampoo',
+                    price: '480',
+                    originalPrice: '550',
+                    discount: '13% OFF',
+                    rating: 4.7,
+                    reviews: 412
+                },
+                {
+                    name: 'Vimal Pan Masala',
+                    image: 'images/vimal.jpg',
+                    description: 'Premium quality pan masala',
+                    price: '25',
+                    originalPrice: '30',
+                    discount: '17% OFF',
+                    rating: 4.1,
+                    reviews: 278
+                }
+            ];
+
+            const grid = document.querySelector('.premium-grid');
+            
+            products.forEach(product => {
+                const ratingStars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star"></i>').join('');
+                const hasHalfStar = product.rating % 1 >= 0.5;
+                
+                const productCard = `
+                    <div class="premium-card">
+                        <div class="premium-badge">Namkeen</div>
+                        <div class="premium-img">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='images/placeholder.jpg'">
+                        </div>
+                        <div class="premium-content">
+                            <h3>${product.name}</h3>
+                            <div class="product-rating" style="text-align: center; margin: 10px 0;">
+                                <div class="stars" style="justify-content: center;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5</span>
+                                </div>
+                                <div class="price-per-kg" style="color: #666; font-size: 0.9rem; margin-top: 5px;">₹280 per KG</div>
+                            </div>
+                            <p>${product.description}</p>
+                            <div class="premium-price" style="justify-content: center;">
+                                <span class="current-price">₹230</span>
+                                <span class="original-price">₹280</span>
+                                <span class="discount">18% OFF</span>
+                            </div>
+                            <div style="text-align: center; width: 100%; color: #4CAF50; font-weight: 500; margin: 5px 0 15px 0; font-size: 0.9rem; white-space: nowrap;">250 GM and 500 GM Packet Available</div>
+                            <a href="#" class="premium-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', productCard);
+            });
+
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Add click handler for WhatsApp buttons to format message with correct prices
+            document.addEventListener('click', function(e) {
+                const whatsappBtn = e.target.closest('.whatsapp-btn');
+                if (whatsappBtn) {
+                    e.preventDefault();
+                    const card = whatsappBtn.closest('.premium-card');
+                    const productName = card.querySelector('h3').textContent;
+                    const pricePerKgText = card.querySelector('.price-per-kg').textContent.trim();
+                    const currentPrice = card.querySelector('.current-price').textContent;
+                    const originalPrice = card.querySelector('.original-price').textContent;
+                    const discount = card.querySelector('.discount').textContent;
+                    
+                    // Extract the numeric discounted price (e.g., '₹230' -> 230) and calculate 250GM/500GM prices
+                    const discountedPrice = parseFloat(currentPrice.replace(/[^0-9.]/g, ''));
+                    const price250gm = Math.round(discountedPrice * 0.25);
+                    const price500gm = Math.round(discountedPrice * 0.5);
+                    
+                    const message = `🛍️ *Order Details – The VK Store*\n\n📦 *Product:* ${productName}\n💰 *Original Price:* ${originalPrice} per KG\n🏷️ *Discounted Price:* ${currentPrice} per KG\n🎁 *Discount:* ${discount}\n\n📊 *Available Packs:*\n• 250 GM → ₹${price250gm}\n• 500 GM → ₹${price500gm}\n\n📝 *Delivery Details (please fill in):*\n🛒 *Your Order:* \n👤 *Name:* \n🏠 *Address:* \n📱 *Mobile No:* \n\n🙏 Thank you for shopping with *The VK Store*! 💝`;
+                    
+                    const encodedMessage = encodeURIComponent(message);
+                    window.open(`https://wa.me/918866791095?text=${encodedMessage}`, '_blank');
+                }
+            });
+        });
+</script>
+    </script>
+</body>
+</html>
