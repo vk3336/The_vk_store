@@ -79,7 +79,7 @@
             </div>
 
             <div class="desktop-order">
-                <a href="https://wa.me/918866791095?text=Hello%2C%20welcome%20to%20The%20VK%20Store.%0AHow%20can%20I%20assist%20you%20today%3F" class="whatsapp-btn">
+                <a href="https://wa.me/918866791095?text=Hello%2C%20welcome%20to%20The%20VK%20Store.%0AHow%20can%20I%20assist%20you%20today%3F" class="whatsapp-order-btn">
                     <i class="fab fa-whatsapp"></i>
                     <span>Order Now</span>
                 </a>
@@ -316,8 +316,118 @@
         </div>
     </section>
 
+    <!-- Premium Khakhra Section -->
+    <section class="premium-khakhra section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Premium Selection</span>
+                <h2 class="section-title">Premium Khakhra</h2>
+                <p class="section-description">Experience the authentic taste of traditional Gujarati khakhras</p>
+            </div>
+
+            <div class="premium-carousel-container">
+                <button class="carousel-arrow khakhra-prev" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="premium-carousel khakhra-carousel">
+                    <!-- Khakhra 1 -->
+                    <div class="premium-card">
+                        <div class="premium-badge">Hot</div>
+                        <div class="premium-img">
+                            <img src="images/Masala-Khakhra.png" alt="Masala Khakhra">
+                        </div>
+                        <div class="premium-content">
+                            <h3>Masala Khakhra</h3>
+                            <p class="premium-desc">Spicy and crispy masala khakhra made with premium ingredients</p>
+                            <div class="premium-price">
+                                <span class="price">₹120</span>
+                                <span class="weight">/ 200g</span>
+                            </div>
+                            <button class="whatsapp-order-btn"
+                                    data-product="Masala Khakhra"
+                                    data-price="120">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Khakhra 2 -->
+                    <div class="premium-card">
+                        <div class="premium-badge">Best Seller</div>
+                        <div class="premium-img">
+                            <img src="images/Methi-Khakhra-1.png" alt="Methi Khakhra">
+                        </div>
+                        <div class="premium-content">
+                            <h3>Methi Khakhra</h3>
+                            <p class="premium-desc">Healthy and crispy methi khakhra with the goodness of fenugreek</p>
+                            <div class="premium-price">
+                                <span class="price">₹130</span>
+                                <span class="weight">/ 200g</span>
+                            </div>
+                            <button class="whatsapp-order-btn"
+                                    data-product="Methi Khakhra"
+                                    data-price="130">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Khakhra 3 -->
+                    <div class="premium-card">
+                        <div class="premium-badge">Classic</div>
+                        <div class="premium-img">
+                            <img src="images/Sada-Khakhra.png" alt="Sada Khakhra">
+                        </div>
+                        <div class="premium-content">
+                            <h3>Sada Khakhra</h3>
+                            <p class="premium-desc">Traditional plain khakhra, light and crispy</p>
+                            <div class="premium-price">
+                                <span class="price">₹110</span>
+                                <span class="weight">/ 200g</span>
+                            </div>
+                            <button class="whatsapp-order-btn"
+                                    data-product="Sada Khakhra"
+                                    data-price="110">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Khakhra 4 -->
+                    <div class="premium-card">
+                        <div class="premium-badge">Special</div>
+                        <div class="premium-img">
+                            <img src="images/jeerakhakhra.jpg" alt="Jeera Khakhra">
+                        </div>
+                        <div class="premium-content">
+                            <h3>Jeera Khakhra</h3>
+                            <p class="premium-desc">Flavorful khakhra with the aromatic touch of cumin seeds</p>
+                            <div class="premium-price">
+                                <span class="price">₹125</span>
+                                <span class="weight">/ 200g</span>
+                            </div>
+                            <button class="whatsapp-order-btn"
+                                    data-product="Jeera Khakhra"
+                                    data-price="125">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-arrow khakhra-next" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="carousel-dots khakhra-dots">
+                <!-- Dots will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
   
- 
     <!-- Branded Products Section -->
     <section class="branded section-padding" id="branded">
         <div class="container">
@@ -471,7 +581,7 @@
             <div class="section-cta text-center">
                 <p class="bulk-info">Need branded items in bulk? Message us for best rates.</p>
                 <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I%20want%20branded%20items%20in%20bulk"
-                    class="cta-button primary">
+                    class="whatsapp-order-btn">
                     <i class="fab fa-whatsapp"></i>
                     <span>Ask for Bulk Quote</span>
                 </a>
@@ -488,42 +598,56 @@
                 
             </div>
 
-            <div class="offer-cards">
-                <!-- Offer 1 -->
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fas fa-birthday-cake"></i>
+            <div class="offers-carousel-container">
+                <button class="carousel-arrow offers-prev" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="offers-carousel">
+                    <!-- Offer 1 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h3>Birthday Celebrations</h3>
+                        <p>Make your special day even more memorable with our birthday discount</p>
                     </div>
-                    <h3>Birthday Celebrations</h3>
-                    <p>Make your special day even more memorable with our birthday discount</p>
-                </div>
 
-                <!-- Offer 2 -->
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fas fa-hands-helping"></i>
+                    <!-- Offer 2 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Helping Hands</h3>
+                        <p>Special pricing for purchases meant for the underprivileged</p>
                     </div>
-                    <h3>Helping Hands</h3>
-                    <p>Special pricing for purchases meant for the underprivileged</p>
-                </div>
 
-                <!-- Offer 3 -->
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fas fa-dove"></i>
+                    <!-- Offer 3 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-dove"></i>
+                        </div>
+                        <h3>Bird Feed</h3>
+                        <p>Support our feathered friends with discounted bird feed</p>
                     </div>
-                    <h3>Bird Feed</h3>
-                    <p>Support our feathered friends with discounted bird feed</p>
-                </div>
 
-                <!-- Offer 4 -->
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fas fa-glass-cheers"></i>
+                    <!-- Offer 4 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3>Special Occasions</h3>
+                        <p>Celebrating something special? We've got you covered</p>
                     </div>
-                    <h3>Special Occasions</h3>
-                    <p>Celebrating something special? We've got you covered</p>
                 </div>
+                
+                <button class="carousel-arrow offers-next" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="carousel-dots offers-dots">
+                <!-- Dots will be added by JavaScript -->
             </div>
 
             <div class="offer-cta text-center">
@@ -532,7 +656,7 @@
                     <p>Our aim is not just selling products, but helping you spread happiness and kindness.</p>
                 </div>
                 <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I'd%20like%20to%20avail%20the%20special%20discount"
-                    class="cta-button white">
+                    class="whatsapp-order-btn">
                     <i class="fab fa-whatsapp"></i>
                     <span>Claim Your Discount</span>
                 </a>
@@ -629,7 +753,7 @@
                         </div>
 
                         <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I%20would%20like%20to%20place%20an%20order"
-                            class="cta-button primary full-width" target="_blank" rel="noopener">
+                            class="whatsapp-order-btn full-width" target="_blank" rel="noopener">
                             <i class="fab fa-whatsapp"></i>
                             <span>Start Order on WhatsApp</span>
                         </a>

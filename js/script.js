@@ -44,6 +44,22 @@ navItems.forEach(link => {
     });
 });
 
+// WhatsApp Order Buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle order buttons
+    const orderButtons = document.querySelectorAll('.whatsapp-order-btn');
+    
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const product = this.getAttribute('data-product');
+            const price = this.getAttribute('data-price');
+            const message = `I would like to order ${product} for ₹${price}.`;
+            const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    });
+});
+
 // Add active class to current nav item
 function setActiveNav() {
     const scrollPosition = window.scrollY + 200;
