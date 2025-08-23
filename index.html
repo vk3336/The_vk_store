@@ -12,7 +12,7 @@
     <meta property="og:description"
         content="Shop namkeens, masalas, pickles, papads, and branded bulk products. Flat 5% discount on special occasions. Order on WhatsApp instantly.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/hero-bg1.jpg">
+    <meta property="og:image" content="images/ratlami.png">
     <meta property="og:url" content="https://thevkstore.example.com">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -97,7 +97,7 @@
         <div class="hero-slider">
             <!-- Slide 1 -->
             <div class="slide active"
-                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg1.jpg') center/cover no-repeat;">
+                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/ratlami.png') center/cover no-repeat;">
                 <div class="container">
                     <div class="hero-content">
                         <span class="hero-subtitle">Welcome to The VK Store</span>
@@ -120,7 +120,7 @@
 
             <!-- Slide 2 -->
             <div class="slide"
-                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg2.jpg') center/cover no-repeat;">
+                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/mixchavana.webp') center/cover no-repeat;">
                 <div class="container">
                     <div class="hero-content">
                         <span class="hero-subtitle">Special Discount</span>
@@ -171,7 +171,13 @@
                                 <span class="original-price">₹150</span>
                                 <span class="discount">20% OFF</span>
                             </div>
-                            <a href="#" class="premium-btn">Add to Cart</a>
+                            <button class="whatsapp-order-btn" 
+                                    data-product="Bablu Namkeen"
+                                    data-original-price="150"
+                                    data-discounted-price="120"
+                                    data-discount="20%">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
                         </div>
                     </div>
 
@@ -189,7 +195,13 @@
                                 <span class="original-price">₹170</span>
                                 <span class="discount">21% OFF</span>
                             </div>
-                            <a href="#" class="premium-btn">Add to Cart</a>
+                            <button class="whatsapp-order-btn" 
+                                    data-product="Gopal Namkeen"
+                                    data-original-price="170"
+                                    data-discounted-price="135"
+                                    data-discount="21%">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
                         </div>
                     </div>
 
@@ -201,13 +213,19 @@
                         </div>
                         <div class="premium-content">
                             <h3>Balaji Wafers</h3>
-                            <p>Light and crispy wafers with perfect seasoning</p>
+                            <p>Crispy and light potato wafers with perfect seasoning</p>
                             <div class="premium-price">
                                 <span class="current-price">₹110</span>
                                 <span class="original-price">₹140</span>
                                 <span class="discount">21% OFF</span>
                             </div>
-                            <a href="#" class="premium-btn">Add to Cart</a>
+                            <button class="whatsapp-order-btn" 
+                                    data-product="Balaji Wafers"
+                                    data-original-price="140"
+                                    data-discounted-price="110"
+                                    data-discount="21%">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
                         </div>
                     </div>
 
@@ -225,7 +243,13 @@
                                 <span class="original-price">₹120</span>
                                 <span class="discount">21% OFF</span>
                             </div>
-                            <a href="#" class="premium-btn">Add to Cart</a>
+                            <button class="whatsapp-order-btn" 
+                                    data-product="Britania Cookies"
+                                    data-original-price="120"
+                                    data-discounted-price="95"
+                                    data-discount="21%">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
                         </div>
                     </div>
 
@@ -243,7 +267,13 @@
                                 <span class="original-price">₹160</span>
                                 <span class="discount">19% OFF</span>
                             </div>
-                            <a href="#" class="premium-btn">Add to Cart</a>
+                            <button class="whatsapp-order-btn" 
+                                    data-product="Special Chivda"
+                                    data-original-price="160"
+                                    data-discounted-price="130"
+                                    data-discount="19%">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
                         </div>
                     </div>
 
@@ -255,13 +285,19 @@
                         </div>
                         <div class="premium-content">
                             <h3>Masala Peanuts</h3>
-                            <p>Spicy and crunchy roasted peanuts</p>
+                            <p>Spicy and crunchy roasted peanuts with Indian spices</p>
                             <div class="premium-price">
                                 <span class="current-price">₹100</span>
                                 <span class="original-price">₹130</span>
                                 <span class="discount">23% OFF</span>
                             </div>
-                            <a href="#" class="premium-btn">Add to Cart</a>
+                            <button class="whatsapp-order-btn" 
+                                    data-product="Masala Peanuts"
+                                    data-original-price="130"
+                                    data-discounted-price="100"
+                                    data-discount="23%">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -302,72 +338,120 @@
                             <img src="images/balajiwafers.png" alt="Balaji">
                         </div>
                         <h3>Balaji Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Balaji Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/ramdev.png" alt="Ramdev">
                         </div>
                         <h3>Ramdev Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Ramdev Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/vimal.jpg" alt="Vimal">
                         </div>
                         <h3>Vimal Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Vimal Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/ratlami.png" alt="Ratlami">
                         </div>
                         <h3>Ratlami Sev</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Ratlami Sev">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/suhana.jpg" alt="Suhana">
                         </div>
                         <h3>Suhana Masale</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Suhana Masale">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/parle.png" alt="Parle">
                         </div>
                         <h3>Parle Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Parle Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/kissan.png" alt="Kissan">
                         </div>
                         <h3>Kissan Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Kissan Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/tresemme.jpg" alt="Tresemme">
                         </div>
                         <h3>Hair Care</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Hair Care">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/britania.png" alt="Britannia">
                         </div>
                         <h3>Britannia Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Britannia Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/gopal.png" alt="Gopal">
                         </div>
                         <h3>Gopal Products</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Gopal Products">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/bablu.jpg" alt="Bablu">
                         </div>
                         <h3>Bablu Namkeen</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Bablu Namkeen">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                     <div class="brand-card">
                         <div class="brand-img">
                             <img src="images/mixchavana.webp" alt="Mix Chavana">
                         </div>
                         <h3>Mix Chavana</h3>
+                        <a href="#" class="whatsapp-enquiry" data-brand="Mix Chavana">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Enquire Now</span>
+                        </a>
                     </div>
                 </div>
                 
@@ -381,7 +465,7 @@
             </div>
             
             <div style="display: flex; justify-content: center; margin: 30px 0;">
-                <a href="#branded" class="btn">View More</a>
+                <a href="branded-products.html" class="btn">View More</a>
             </div>
 
             <div class="section-cta text-center">
@@ -727,6 +811,86 @@
             <i class="fas fa-arrow-up"></i>
         </button>
     </footer>
+
+    <!-- WhatsApp Order Script -->
+    <style>
+        .whatsapp-enquiry {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            gap: 8px;
+        }
+        
+        .whatsapp-enquiry:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-enquiry i {
+            font-size: 1.1rem;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event for WhatsApp enquiry buttons
+            document.querySelectorAll('.whatsapp-enquiry').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const brandName = this.getAttribute('data-brand');
+                    const message = `Thank you for choosing ${brandName} at The VK Store.
+
+For bulk orders, please share the following details:
+- Product Name & Quantity
+- Your Name
+- Delivery Address
+- Contact Number
+
+Our team will get back to you with the best offer shortly.`;
+                    const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            });
+            // Handle WhatsApp order buttons
+            document.querySelectorAll('.whatsapp-order-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = this.getAttribute('data-product');
+                    const originalPrice = this.getAttribute('data-original-price');
+                    const discountedPrice = this.getAttribute('data-discounted-price');
+                    const discount = this.getAttribute('data-discount');
+                    
+                    const message = encodeURIComponent(
+                        `🛒 Order Details – The VK Store\n\n` +
+                        `Product: ${product}\n` +
+                        `Original Price: ₹${originalPrice} per KG\n` +
+                        `Discounted Price: ₹${discountedPrice} per KG\n` +
+                        `Discount: ${discount} OFF 🎉\n\n` +
+                        `Available Packs:\n` +
+                        `250 GM → ₹${Math.round(discountedPrice * 0.25)}\n` +
+                        `500 GM → ₹${Math.round(discountedPrice * 0.5)}\n\n` +
+                        `📦 Delivery Details (please fill in):\n` +
+                        `✍️ Your Order:\n` +
+                        `✍️ Name:\n` +
+                        `✍️ Address:\n` +
+                        `✍️ Mobile No:\n\n` +
+                        `✨ Thank you for shopping with The VK Store!`
+                    );
+                    
+                    window.open(`https://wa.me/918866791095?text=${message}`, '_blank');
+                });
+            });
+        });
+    </script>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/918866791095?text=Hello%2C%20welcome%20to%20The%20VK%20Store.%0AHow%20can%20I%20assist%20you%20today%3F" class="whatsapp-float" target="_blank" rel="noopener"
