@@ -412,9 +412,12 @@ img {
 }
 
 .hero-content {
-    max-width: 1000px;
-    padding: 0 20px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 5%;
     color: white;
+    text-align: center;
+    text-align: center;
     animation: fadeInUp 1s ease;
     text-align: center;
     margin: 0 auto;
@@ -431,17 +434,28 @@ img {
 }
 
 .hero h1 {
-    font-size: clamp(32px, 5vw, 60px);
-    margin-bottom: 20px;
+    font-size: clamp(28px, 5vw, 48px);
+    margin: 0 auto 20px;
     line-height: 1.2;
-    letter-spacing: 0.5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 5%;
 }
 
 .hero h1 span {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin: 0 auto 30px;
+    max-width: 90%;
+    padding: 0 5%;
+    line-height: 1.6;
 }
 
 .hero h1 span::after {
@@ -2324,7 +2338,11 @@ scroll-snap-align: start;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 20px;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .hero p {

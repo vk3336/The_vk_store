@@ -316,21 +316,124 @@ function initNewsletterForm() {
     });
 }
 
+// Function to render products
+function renderProducts(products, containerSelector, isKhakhra = false) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    container.innerHTML = products.map(product => `
+        <div class="premium-card">
+            ${product.isPremium ? '<div class="premium-badge">Premium</div>' : ''}
+            <div class="premium-img">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='images/placeholder.jpg'" loading="lazy">
+            </div>
+            <div class="premium-content">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <div class="premium-price">
+                    <span class="current-price">${product.currentPrice}</span>
+                    <span class="original-price">${product.originalPrice}</span>
+                    <span class="discount">${product.discount}</span>
+                </div>
+                ${product.weight ? `<div class="weight">${product.weight}</div>` : ''}
+                <button class="whatsapp-order-btn" 
+                        data-product="${product.name}"
+                        data-original-price="${product.originalPrice.replace('₹', '')}"
+                        data-discounted-price="${product.currentPrice.replace('₹', '')}"
+                        data-discount="${product.discount}">
+                    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                </button>
+            </div>
+        </div>
+    `).join('');
+    
+    // Reattach event listeners for WhatsApp buttons
+    attachWhatsAppButtonListeners();
+}
+
+// Function to handle WhatsApp button clicks
+function attachWhatsAppButtonListeners() {
+    document.querySelectorAll('.whatsapp-order-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const product = this.getAttribute('data-product');
+            const price = this.getAttribute('data-discounted-price');
+            const message = `I'd like to order ${product} for ₹${price}.`;
+            const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    });
+}
+
+// Load regular premium products
+function loadProducts() {
+    // Check if productsData is available (loaded from products.js)
+    if (window.productsData) {
+        const premiumProducts = window.productsData.getPremiumProducts();
+        renderProducts(premiumProducts, '.premium-carousel:not(.khakhra-carousel)');
+        
+        // Initialize carousel after products are loaded
+        if (typeof initCarousel === 'function') {
+            initCarousel({
+                carousel: '.premium-carousel:not(.khakhra-carousel)',
+                prevBtn: '.prev-arrow:not(.branded-prev):not(.khakhra-prev):not(.offers-prev)',
+                nextBtn: '.next-arrow:not(.branded-next):not(.khakhra-next):not(.offers-next)',
+                dotsContainer: '.carousel-dots:not(.branded-dots):not(.khakhra-dots):not(.offers-dots)',
+                cardSelector: '.premium-card',
+                autoSlide: true
+            });
+        }
+    } else {
+        console.error('Products data not loaded');
+    }
+}
+
+// Load Khakhra products
+function loadKhakhraProducts() {
+    if (window.khakhraProducts && window.khakhraProducts.length > 0) {
+        renderProducts(window.khakhraProducts, '.khakhra-carousel', true);
+        
+        // Initialize khakhra carousel after products are loaded
+        if (typeof initCarousel === 'function') {
+            initCarousel({
+                carousel: '.khakhra-carousel',
+                prevBtn: '.khakhra-prev',
+                nextBtn: '.khakhra-next',
+                dotsContainer: '.khakhra-dots',
+                cardSelector: '.premium-card',
+                autoSlide: true
+            });
+        }
+    } else {
+        console.error('Khakhra products not loaded');
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initHeroSlider();
     initStickyHeader();
     initBackToTop();
     initSmoothScroll();
+    setActiveNav();
+    animateOnScroll();
     initScrollAnimations();
     initNewsletterForm();
     
-    // Set active nav on page load
-    setActiveNav();
-    
+    // Load both regular and khakhra products
+    loadProducts();
+    loadKhakhraProducts();
+
     // Update active nav on scroll
     window.addEventListener('scroll', setActiveNav);
-    
+
+    // Close mobile menu when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+            hideMenu();
+        }
+    });
+
     // Add animation delay to features
     document.querySelectorAll('.feature').forEach((feature, index) => {
         feature.style.transitionDelay = `${index * 0.1}s`;

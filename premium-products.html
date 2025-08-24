@@ -280,17 +280,78 @@
             </a>
         </nav>
     </header>
-
+<br>
+<br>
+<br>
+<br>
+<br>
     <!-- Premium Products Grid -->
-    <section class="section-padding">
+    <main class="main">
         <div class="section-header">
             <span class="section-subtitle">Premium Collection</span>
             <h2 class="section-title">All Premium Products</h2>
+            <div class="search-container" style="max-width: 650px; margin: 0 auto 40px; position: relative;">
+                <div class="search-box" style="position: relative; background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 50px; padding: 5px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); border: 1px solid rgba(255, 255, 255, 0.5);">
+                    <input type="text" 
+                           id="product-search" 
+                           placeholder="Search premium products..." 
+                           style="width: 100%; 
+                                  padding: 16px 25px; 
+                                  border: none; 
+                                  background: transparent; 
+                                  border-radius: 40px; 
+                                  font-size: 1.05rem; 
+                                  outline: none; 
+                                  transition: all 0.3s ease;
+                                  font-family: 'Poppins', sans-serif;
+                                  color: #2d3436;
+                                  box-shadow: none;">
+                    <button style="position: absolute; 
+                                 right: 5px; 
+                                 top: 5px; 
+                                 background: linear-gradient(135deg, #ff6b6b, #ff4757); 
+                                 color: white; 
+                                 border: none; 
+                                 border-radius: 50%; 
+                                 width: 48px; 
+                                 height: 48px; 
+                                 display: flex; 
+                                 align-items: center; 
+                                 justify-content: center; 
+                                 cursor: pointer; 
+                                 transition: all 0.3s ease; 
+                                 box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+                                 overflow: hidden;">
+                        <i class="fas fa-search" style="font-size: 1.1rem; transition: transform 0.3s ease;"></i>
+                        <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); transition: 0.5s;"></span>
+                    </button>
+                </div>
+                <div id="search-suggestions" style="display: none; 
+                                                position: absolute; 
+                                                top: calc(100% + 10px); 
+                                                left: 0; 
+                                                right: 0; 
+                                                background: white; 
+                                                border-radius: 12px; 
+                                                margin-top: 8px; 
+                                                box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+                                                z-index: 1000; 
+                                                max-height: 350px; 
+                                                overflow-y: auto;
+                                                opacity: 0;
+                                                transform: translateY(10px);
+                                                transition: all 0.3s ease-out;
+                                                border: 1px solid rgba(0,0,0,0.05);
+                                                backdrop-filter: blur(10px);
+                                                -webkit-backdrop-filter: blur(10px);">
+                    <!-- Suggestions will be populated by JavaScript -->
+                </div>
+            </div>
         </div>
         <div class="premium-grid">
             <!-- Product cards will be populated by JavaScript -->
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -312,201 +373,7 @@
     </a>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Product data using available images
-            const products = [
-                {
-                    name: 'Bablu Namkeen',
-                    image: 'images/bablu.jpg',
-                    description: 'Premium quality traditional namkeen with authentic flavors',
-                    price: '120',
-                    originalPrice: '150',
-                    discount: '20% OFF',
-                    rating: 4.5,
-                    reviews: 128
-                },
-                {
-                    name: 'Gopal Namkeen',
-                    image: 'images/gopal.png',
-                    description: 'Crunchy and flavorful traditional snack mix',
-                    price: '135',
-                    originalPrice: '170',
-                    discount: '21% OFF',
-                    rating: 4.3,
-                    reviews: 95
-                },
-                {
-                    name: 'Balaji Wafers',
-                    image: 'images/balajiwafers.png',
-                    description: 'Crispy and delicious potato wafers',
-                    price: '20',
-                    originalPrice: '25',
-                    discount: '20% OFF',
-                    rating: 4.7,
-                    reviews: 215
-                },
-                {
-                    name: 'Britannia Biscuits',
-                    image: 'images/britania.png',
-                    description: 'Delicious and crispy biscuits for all occasions',
-                    price: '35',
-                    originalPrice: '45',
-                    discount: '22% OFF',
-                    rating: 4.6,
-                    reviews: 342
-                },
-                {
-                    name: 'Kissan Mixed Fruit Jam',
-                    image: 'images/kissan.png',
-                    description: 'Sweet and fruity mixed fruit jam',
-                    price: '180',
-                    originalPrice: '220',
-                    discount: '18% OFF',
-                    rating: 4.8,
-                    reviews: 278
-                },
-                {
-                    name: 'Mixed Chivda',
-                    image: 'images/mixchavana.webp',
-                    description: 'Crunchy and spicy mixed chivda snack',
-                    price: '150',
-                    originalPrice: '180',
-                    discount: '17% OFF',
-                    rating: 4.4,
-                    reviews: 189
-                },
-                {
-                    name: 'Parle-G Biscuits',
-                    image: 'images/parle.png',
-                    description: 'Classic tea time biscuits loved by all',
-                    price: '10',
-                    originalPrice: '12',
-                    discount: '17% OFF',
-                    rating: 4.7,
-                    reviews: 1562
-                },
-                {
-                    name: 'Ramdev Masala',
-                    image: 'images/ramdev.png',
-                    description: 'Aromatic and flavorful spice mix',
-                    price: '85',
-                    originalPrice: '100',
-                    discount: '15% OFF',
-                    rating: 4.5,
-                    reviews: 231
-                },
-                {
-                    name: 'Ratlami Sev',
-                    image: 'images/ratlami.png',
-                    description: 'Spicy and crispy traditional sev',
-                    price: '110',
-                    originalPrice: '130',
-                    discount: '15% OFF',
-                    rating: 4.6,
-                    reviews: 198
-                },
-                {
-                    name: 'Suhana Paneer Masala',
-                    image: 'images/suhana.jpg',
-                    description: 'Rich and aromatic paneer masala mix',
-                    price: '45',
-                    originalPrice: '55',
-                    discount: '18% OFF',
-                    rating: 4.3,
-                    reviews: 156
-                },
-                {
-                    name: 'Tresemme Shampoo',
-                    image: 'images/tresemme.jpg',
-                    description: 'Professional quality hair care shampoo',
-                    price: '480',
-                    originalPrice: '550',
-                    discount: '13% OFF',
-                    rating: 4.7,
-                    reviews: 412
-                },
-                {
-                    name: 'Vimal Pan Masala',
-                    image: 'images/vimal.jpg',
-                    description: 'Premium quality pan masala',
-                    price: '25',
-                    originalPrice: '30',
-                    discount: '17% OFF',
-                    rating: 4.1,
-                    reviews: 278
-                }
-            ];
-
-            const grid = document.querySelector('.premium-grid');
-            
-            products.forEach(product => {
-                const ratingStars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star"></i>').join('');
-                const hasHalfStar = product.rating % 1 >= 0.5;
-                
-                const productCard = `
-                    <div class="premium-card">
-                        <div class="premium-badge">Namkeen</div>
-                        <div class="premium-img">
-                            <img src="${product.image}" alt="${product.name}" onerror="this.src='images/placeholder.jpg'">
-                        </div>
-                        <div class="premium-content">
-                            <h3>${product.name}</h3>
-                            <div class="product-rating" style="text-align: center; margin: 10px 0;">
-                                <div class="stars" style="justify-content: center;">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <span>4.5</span>
-                                </div>
-                                <div class="price-per-kg" style="color: #666; font-size: 0.9rem; margin-top: 5px;">₹280 per KG</div>
-                            </div>
-                            <p>${product.description}</p>
-                            <div class="premium-price" style="justify-content: center;">
-                                <span class="current-price">₹230</span>
-                                <span class="original-price">₹280</span>
-                                <span class="discount">18% OFF</span>
-                            </div>
-                            <div style="text-align: center; width: 100%; color: #4CAF50; font-weight: 500; margin: 5px 0 15px 0; font-size: 0.9rem; white-space: nowrap;">250 GM and 500 GM Packet Available</div>
-                            <a href="#" class="premium-btn whatsapp-btn">
-                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                `;
-                grid.insertAdjacentHTML('beforeend', productCard);
-            });
-
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Add click handler for WhatsApp buttons to format message with correct prices
-            document.addEventListener('click', function(e) {
-                const whatsappBtn = e.target.closest('.whatsapp-btn');
-                if (whatsappBtn) {
-                    e.preventDefault();
-                    const card = whatsappBtn.closest('.premium-card');
-                    const productName = card.querySelector('h3').textContent;
-                    const pricePerKgText = card.querySelector('.price-per-kg').textContent.trim();
-                    const currentPrice = card.querySelector('.current-price').textContent;
-                    const originalPrice = card.querySelector('.original-price').textContent;
-                    const discount = card.querySelector('.discount').textContent;
-                    
-                    // Extract the numeric discounted price (e.g., '₹230' -> 230) and calculate 250GM/500GM prices
-                    const discountedPrice = parseFloat(currentPrice.replace(/[^0-9.]/g, ''));
-                    const price250gm = Math.round(discountedPrice * 0.25);
-                    const price500gm = Math.round(discountedPrice * 0.5);
-                    
-                    const message = `🛍️ *Order Details – The VK Store*\n\n📦 *Product:* ${productName}\n💰 *Original Price:* ${originalPrice} per KG\n🏷️ *Discounted Price:* ${currentPrice} per KG\n🎁 *Discount:* ${discount}\n\n📊 *Available Packs:*\n• 250 GM → ₹${price250gm}\n• 500 GM → ₹${price500gm}\n\n📝 *Delivery Details (please fill in):*\n🛒 *Your Order:* \n👤 *Name:* \n🏠 *Address:* \n📱 *Mobile No:* \n\n🙏 Thank you for shopping with *The VK Store*! 💝`;
-                    
-                    const encodedMessage = encodeURIComponent(message);
-                    window.open(`https://wa.me/918866791095?text=${encodedMessage}`, '_blank');
-                }
-            });
-        });
-</script>
-    </script>
+    <!-- Link to external JavaScript file for premium products -->
+    <script src="js/premium-products.js"></script>
 </body>
 </html>
