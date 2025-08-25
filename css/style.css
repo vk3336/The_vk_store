@@ -1,3 +1,146 @@
+/* Reset default margins and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Favicon styles */
+link[rel="icon"] {
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner Styles */
+.banner-container {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000; /* Black background to hide any potential white space */
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.banner-slide {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: cover; /* Changed to cover to fill the width */
+    object-position: center center;
+    display: block;
+    margin: 0;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .banner-img {
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-img {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-img {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-img {
+        height: 50vh;
+    }
+}
+
+.banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+.banner-arrow:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.prev-banner {
+    left: 15px;
+}
+
+.next-banner {
+    right: 15px;
+}
+
+.banner-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.banner-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.banner-dots .dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
 /* Base Styles */
 :root {
     --primary-color: #ff6b6b;
@@ -160,7 +303,13 @@ img {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+/* Add padding to body to prevent content from being hidden behind fixed header */
+body {
+    padding-top: 80px; /* Adjust this value based on your header height */
 }
 
 .header.scroll-down {
@@ -170,6 +319,16 @@ img {
 .header.scroll-up {
     transform: translateY(0);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure header content is properly aligned */
+.header .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .nav-container {
@@ -210,9 +369,14 @@ img {
 }
 
 .logo-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    width: 65px;
+    height: 65px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -221,6 +385,14 @@ img {
     color: white;
     font-size: 24px;
     box-shadow: 0 10px 24px rgba(255, 107, 107, 0.35);
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 5px;
 }
 
 .logo-text {

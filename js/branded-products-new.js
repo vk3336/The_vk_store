@@ -125,9 +125,42 @@ function renderProducts(products) {
             e.preventDefault();
             const brand = this.getAttribute('data-brand');
             const message = `Hi, I'm interested in ${brand}.\n\nPlease share the product name and quantity you'd like to order. Our team will assist you with pricing and delivery.`;
-            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+            // Replace with your WhatsApp business number in international format (without + or 00)
+            // Example: 911234567890 for India (91 is country code)
+            const phoneNumber = '919999999999'; // TODO: Replace with actual WhatsApp number
+            try {
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            } catch (error) {
+                console.error('Error opening WhatsApp:', error);
+                alert('Could not open WhatsApp. Please make sure you have WhatsApp installed.');
+            }
         });
+    });
+    
+    // Header scroll behavior
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            header.classList.remove('scroll-up');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+            // Scroll down
+            header.classList.remove('scroll-up');
+            header.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+            // Scroll up
+            header.classList.remove('scroll-down');
+            header.classList.add('scroll-up');
+        }
+        
+        lastScroll = currentScroll;
     });
 }
 

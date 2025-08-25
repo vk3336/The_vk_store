@@ -1,3 +1,68 @@
+// Banner Slider
+function initBannerSlider() {
+    const slides = document.querySelectorAll('.banner-slide');
+    const dots = document.querySelectorAll('.banner-dots .dot');
+    let currentSlide = 0;
+    let slideInterval;
+    const slideIntervalTime = 3000; // 3 seconds
+
+    // Show current slide
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Start auto slide
+    function startSlide() {
+        slideInterval = setInterval(nextSlide, slideIntervalTime);
+    }
+
+    // Stop auto slide when user interacts
+    function pauseSlide() {
+        clearInterval(slideInterval);
+    }
+
+    // Dot click event
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            pauseSlide();
+            startSlide();
+        });
+    });
+
+    // Pause on hover
+    const bannerSlider = document.querySelector('.banner-slider');
+    if (bannerSlider) {
+        bannerSlider.addEventListener('mouseenter', pauseSlide);
+        bannerSlider.addEventListener('mouseleave', startSlide);
+    }
+
+    // Show first slide and start auto slide
+    if (slides.length > 0) {
+        showSlide(0);
+        startSlide();
+    }
+}
+
 // Mobile Menu Toggle
 const navLinks = document.getElementById('navLinks');
 const menuToggle = document.querySelector('.menu-toggle');
@@ -411,6 +476,7 @@ function loadKhakhraProducts() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    initBannerSlider();
     initHeroSlider();
     initStickyHeader();
     initBackToTop();
