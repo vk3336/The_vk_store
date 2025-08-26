@@ -269,6 +269,94 @@
         </div>
     </section>
 
+     <!-- Brands Marquee -->
+     <section class="brands-marquee">
+        <div class="container">
+            <h3 class="section-subtitle text-center">Our Trusted Brands</h3>
+            <div class="marquee-container">
+                <div class="marquee">
+                    <div class="marquee-inner">
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/parle.png" alt="Parle" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/britania.png" alt="Britannia" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/balajiwafers.png" alt="Balaji Wafers" class="brand-logo">
+                        </div>
+                      
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/kissan.avif" alt="Kissan" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/bablu.jpg" alt="Bablu" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/ramdev.jpg" alt="Ramdev Namkeen" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/tresemme.jpg" alt="Tresemme" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/dove.png" alt="Dove" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/lux.png" alt="Lux" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/clinicplus.avif" alt="Clinic Plus" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/ponds.png" alt="Ponds" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/surfexcel.png" alt="Surf Excel" class="brand-logo">
+                        </div>
+                        <!-- Duplicate items for seamless looping -->
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/parle.png" alt="Parle" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/britania.png" alt="Britannia" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/balajiwafers.png" alt="Balaji Wafers" class="brand-logo">
+                        </div>
+                      
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/kissan.avif" alt="Kissan" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/bablu.jpg" alt="Bablu" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/ramdev.jpg" alt="Ramdev Namkeen" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/tresemme.jpg" alt="Tresemme" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/dove.png" alt="Dove" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/lux.png" alt="Lux" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/clinicplus.avif" alt="Clinic Plus" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/ponds.png" alt="Ponds" class="brand-logo">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/brandedproduct/surfexcel.png" alt="Surf Excel" class="brand-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-bottom">
@@ -289,137 +377,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // Branded products data
-            const brandedProducts = [
-                {
-                    name: 'Balaji Products',
-                    image: 'images/balajiwafers.png',
-                    description: 'Wide range of chips, wafers, and snacks from Balaji'
-                },
-                {
-                    name: 'Ramdev Products',
-                    image: 'images/ramdev.png',
-                    description: 'Quality spices and food products from Ramdev'
-                },
-                {
-                    name: 'Vimal Products',
-                    image: 'images/vimal.jpg',
-                    description: 'Premium pan masala and related products'
-                },
-                {
-                    name: 'Ratlami Sev',
-                    image: 'images/ratlami.png',
-                    description: 'Authentic Ratlami sev and namkeens'
-                },
-                {
-                    name: 'Suhana Masale',
-                    image: 'images/suhana.jpg',
-                    description: 'Wide range of spices and ready-to-cook mixes'
-                },
-                {
-                    name: 'Parle Products',
-                    image: 'images/parle.png',
-                    description: 'Biscuits, cookies and snacks from Parle'
-                },
-                {
-                    name: 'Kissan Products',
-                    image: 'images/kissan.png',
-                    description: 'Jams, ketchups and squashes from Kissan'
-                },
-                {
-                    name: 'Hair Care',
-                    image: 'images/tresemme.jpg',
-                    description: 'Professional hair care products'
-                },
-                {
-                    name: 'Britannia Products',
-                    image: 'images/britania.png',
-                    description: 'Biscuits, breads and dairy products'
-                },
-                {
-                    name: 'Gopal Products',
-                    image: 'images/gopal.png',
-                    description: 'Wide range of namkeens and snacks'
-                },
-                {
-                    name: 'Bablu Namkeen',
-                    image: 'images/bablu.jpg',
-                    description: 'Delicious traditional namkeens'
-                },
-                {
-                    name: 'Mix Chavana',
-                    image: 'images/mixchavana.webp',
-                    description: 'Healthy and tasty chana mix'
-                }
-            ];
-            
-            // Function to create product cards
-            function createProductCards() {
-                const container = document.getElementById('brandedProducts');
-                container.innerHTML = '';
-                
-                brandedProducts.forEach(product => {
-                    const card = document.createElement('div');
-                    card.className = 'brand-card';
-                    card.innerHTML = `
-                        <div class="brand-img">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <h3>${product.name}</h3>
-                        <p class="brand-description">${product.description}</p>
-                        <button class="brand-btn whatsapp-order" 
-                                data-product="${product.name}">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Enquire Now</span>
-                        </button>
-                    `;
-                    container.appendChild(card);
-                });
-                
-                // Add event listeners to WhatsApp buttons
-                document.querySelectorAll('.whatsapp-order').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const productName = this.getAttribute('data-product');
-                        // Format: "Brand Product"
-                        const message = `Thank you for choosing ${productName} at The VK Store.
-
-For bulk orders, please share the following details:
-- Product Name & Quantity
-- Your Name
-- Delivery Address
-- Contact Number
-
-Our team will get back to you with the best offer shortly.`;
-                        const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
-                        window.open(whatsappUrl, '_blank');
-                    });
-                });
-            }
-            
-            // Initialize the page
-            createProductCards();
-            
-            // Mobile menu functionality
-            function showMenu() {
-                document.getElementById('navLinks').classList.add('show');
-            }
-            
-            function hideMenu() {
-                document.getElementById('navLinks').classList.remove('show');
-            }
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const navLinks = document.getElementById('navLinks');
-                const menuToggle = document.querySelector('.menu-toggle');
-                const isClickInsideNav = navLinks.contains(event.target);
-                const isClickOnMenuToggle = menuToggle && (menuToggle === event.target || menuToggle.contains(event.target));
-                
-                if (!isClickInsideNav && !isClickOnMenuToggle) {
-                    hideMenu();
-                }
-            });
         });
     </script>
 </body>

@@ -1,63 +1,83 @@
 const brandedProducts = [
     {
-        name: "Balaji Products",
-        image: "images/balajiwafers.png",
-        brand: "Balaji"
-    },
-    {
-        name: "Ramdev Products",
-        image: "images/vimal.jpg",
-        brand: "Ramdev"
-    },
-    {
-        name: "Vimal Products",
-        image: "images/vimal.jpg",
-        brand: "Vimal"
-    },
-    {
-        name: "Ratlami Sev",
-        image: "images/ratlami.png",
-        brand: "Ratlami"
-    },
-    {
-        name: "Suhana Masale",
-        image: "images/suhana.jpg",
-        brand: "Suhana"
-    },
-    {
-        name: "Parle Products",
-        image: "images/parle.png",
-        brand: "Parle"
-    },
-    {
-        name: "Kissan Products",
-        image: "images/kissan.png",
-        brand: "Kissan"
-    },
-    {
-        name: "Hair Care",
-        image: "images/tresemme.jpg",
-        brand: "Tresemme"
-    },
-    {
-        name: "Britannia Products",
-        image: "images/britania.png",
-        brand: "Britannia"
-    },
-    {
-        name: "Gopal Products",
-        image: "images/gopal.png",
-        brand: "Gopal"
-    },
-    {
         name: "Bablu Namkeen",
-        image: "images/bablu.jpg",
+        image: "images/brandedproduct/bablu.jpg",
         brand: "Bablu"
     },
     {
-        name: "Mix Chavana",
-        image: "images/mixchavana.webp",
-        brand: "Mix Chavana"
+        name: "Balaji Wafers",
+        image: "images/brandedproduct/balajiwafers.png",
+        brand: "Balaji"
+    },
+    {
+        name: "Britannia Products",
+        image: "images/brandedproduct/britania.png",
+        brand: "Britannia"
+    },
+    {
+        name: "Clinic Plus",
+        image: "images/brandedproduct/clinicplus.avif",
+        brand: "Clinic Plus"
+    },
+    {
+        name: "Dove Products",
+        image: "images/brandedproduct/dove.png",
+        brand: "Dove"
+    },
+    {
+        name: "Empire Products",
+        image: "images/brandedproduct/empire.png",
+        brand: "Empire"
+    },
+    {
+        name: "Kissan Products",
+        image: "images/brandedproduct/kissan.avif",
+        brand: "Kissan"
+    },
+    {
+        name: "Lifebuoy Products",
+        image: "images/brandedproduct/lifebouy.avif",
+        brand: "Lifebuoy"
+    },
+    {
+        name: "Lux Products",
+        image: "images/brandedproduct/lux.png",
+        brand: "Lux"
+    },
+    {
+        name: "Parle Products",
+        image: "images/brandedproduct/parle.png",
+        brand: "Parle"
+    },
+    {
+        name: "Ponds Products",
+        image: "images/brandedproduct/ponds.png",
+        brand: "Ponds"
+    },
+    {
+        name: "Ramdev Products",
+        image: "images/brandedproduct/ramdev.jpg",
+        brand: "Ramdev"
+    },
+    {
+        name: "Suhana Products",
+        image: "images/brandedproduct/suhana.png",
+        brand: "Suhana"
+    },
+    {
+        name: "Surf Excel",
+        image: "images/brandedproduct/surfexcel.png",
+        brand: "Surf Excel"
+    },
+    {
+        name: "Tresemme Hair Care",
+        image: "images/brandedproduct/tresemme.jpg",
+        brand: "Tresemme"
+    },
+    {
+        name: "Vim Bar",
+        image: "images/brandedproduct/vimbar.avif",
+        brand: "Vim"
     }
 ];
 

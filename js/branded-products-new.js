@@ -1,64 +1,84 @@
 // Branded Products Data
 const brandedProducts = [
     {
-        name: "Balaji Products",
-        image: "images/balajiwafers.png",
-        brand: "Balaji"
-    },
-    {
-        name: "Ramdev Products",
-        image: "images/vimal.jpg",
-        brand: "Ramdev"
-    },
-    {
-        name: "Vimal Products",
-        image: "images/vimal.jpg",
-        brand: "Vimal"
-    },
-    {
-        name: "Ratlami Sev",
-        image: "images/ratlami.png",
-        brand: "Ratlami"
-    },
-    {
-        name: "Suhana Masale",
-        image: "images/suhana.jpg",
-        brand: "Suhana"
-    },
-    {
-        name: "Parle Products",
-        image: "images/parle.png",
-        brand: "Parle"
-    },
-    {
-        name: "Kissan Products",
-        image: "images/kissan.png",
-        brand: "Kissan"
-    },
-    {
-        name: "Hair Care",
-        image: "images/tresemme.jpg",
-        brand: "Tresemme"
-    },
-    {
-        name: "Britannia Products",
-        image: "images/britania.png",
-        brand: "Britannia"
-    },
-    {
-        name: "Gopal Products",
-        image: "images/gopal.png",
-        brand: "Gopal"
-    },
-    {
         name: "Bablu Namkeen",
-        image: "images/bablu.jpg",
+        image: "images/brandedproduct/bablu.jpg",
         brand: "Bablu"
     },
     {
-        name: "Mix Chavana",
-        image: "images/mixchavana.webp",
-        brand: "Mix Chavana"
+        name: "Balaji Wafers",
+        image: "images/brandedproduct/balajiwafers.png",
+        brand: "Balaji"
+    },
+    {
+        name: "Britannia Products",
+        image: "images/brandedproduct/britania.png",
+        brand: "Britannia"
+    },
+    {
+        name: "Clinic Plus",
+        image: "images/brandedproduct/clinicplus.avif",
+        brand: "Clinic Plus"
+    },
+    {
+        name: "Dove Products",
+        image: "images/brandedproduct/dove.png",
+        brand: "Dove"
+    },
+    {
+        name: "Empire Products",
+        image: "images/brandedproduct/empire.png",
+        brand: "Empire"
+    },
+    {
+        name: "Kissan Products",
+        image: "images/brandedproduct/kissan.avif",
+        brand: "Kissan"
+    },
+    {
+        name: "Lifebuoy Products",
+        image: "images/brandedproduct/lifebouy.avif",
+        brand: "Lifebuoy"
+    },
+    {
+        name: "Lux Products",
+        image: "images/brandedproduct/lux.png",
+        brand: "Lux"
+    },
+    {
+        name: "Parle Products",
+        image: "images/brandedproduct/parle.png",
+        brand: "Parle"
+    },
+    {
+        name: "Ponds Products",
+        image: "images/brandedproduct/ponds.png",
+        brand: "Ponds"
+    },
+    {
+        name: "Ramdev Products",
+        image: "images/brandedproduct/ramdev.jpg",
+        brand: "Ramdev"
+    },
+    {
+        name: "Suhana Products",
+        image: "images/brandedproduct/suhana.png",
+        brand: "Suhana"
+    },
+    {
+        name: "Surf Excel",
+        image: "images/brandedproduct/surfexcel.png",
+        brand: "Surf Excel"
+    },
+    {
+        name: "Tresemme Hair Care",
+        image: "images/brandedproduct/tresemme.jpg",
+        brand: "Tresemme"
+    },
+    {
+        name: "Vim Bar",
+        image: "images/brandedproduct/vimbar.avif",
+        brand: "Vim"
     }
 ];
 
@@ -112,29 +132,26 @@ function renderProducts(products) {
             </div>
             <h3>${product.name}</h3>
             <a href="#" class="brand-btn whatsapp-enquiry" data-brand="${product.name}">
-                <i class="fab fa-whatsapp"></i> Enquire Now
+                <i class="fab fa-wa fa-whatsapp"></i>
+                <span>Enquire Now</span>
             </a>
         </div>
     `).join('');
     
     productsContainer.innerHTML = productsHTML;
     
-    // Add click handlers for WhatsApp enquiry buttons
-    document.querySelectorAll('.whatsapp-enquiry').forEach(button => {
-        button.addEventListener('click', function(e) {
+    // Add click handlers for WhatsApp buttons
+    document.querySelectorAll('.whatsapp-enquiry').forEach((button, index) => {
+        button.addEventListener('click', (e) => {
             e.preventDefault();
-            const brand = this.getAttribute('data-brand');
-            const message = `Hi, I'm interested in ${brand}.\n\nPlease share the product name and quantity you'd like to order. Our team will assist you with pricing and delivery.`;
-            // Replace with your WhatsApp business number in international format (without + or 00)
-            // Example: 911234567890 for India (91 is country code)
-            const phoneNumber = '919999999999'; // TODO: Replace with actual WhatsApp number
-            try {
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
-            } catch (error) {
-                console.error('Error opening WhatsApp:', error);
-                alert('Could not open WhatsApp. Please make sure you have WhatsApp installed.');
-            }
+            const brand = button.getAttribute('data-brand');
+            console.log(`WhatsApp button ${index + 1} clicked for brand:`, brand);
+            
+            const message = `Hello, I'm interested in ${brand}. Could you please provide more details?`;
+            const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
+            console.log('Opening WhatsApp URL:', whatsappUrl);
+            
+            window.open(whatsappUrl, '_blank');
         });
     });
     

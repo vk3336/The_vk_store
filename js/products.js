@@ -1,9 +1,9 @@
 const products = [
     {
         id: 1,
-        name: "Bablu Namkeen",
+        name: "Mix Chavana",
         description: "Premium quality traditional namkeen with authentic flavors",
-        image: "images/bablu.jpg",
+        image: "images/namkeenproduct/mixchavana.avif",
         currentPrice: "₹120",
         originalPrice: "₹150",
         discount: "20% OFF",
