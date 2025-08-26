@@ -455,16 +455,16 @@ function loadProducts() {
     // Check if productsData is available (loaded from products.js)
     if (window.productsData) {
         const premiumProducts = window.productsData.getPremiumProducts();
-        renderProducts(premiumProducts, '.premium-carousel:not(.khakhra-carousel)');
+        renderProducts(premiumProducts, '.offers-carousel');
         
         // Initialize carousel after products are loaded
         if (typeof initCarousel === 'function') {
             initCarousel({
-                carousel: '.premium-carousel:not(.khakhra-carousel)',
-                prevBtn: '.prev-arrow:not(.branded-prev):not(.khakhra-prev):not(.offers-prev)',
-                nextBtn: '.next-arrow:not(.branded-next):not(.khakhra-next):not(.offers-next)',
-                dotsContainer: '.carousel-dots:not(.branded-dots):not(.khakhra-dots):not(.offers-dots)',
-                cardSelector: '.premium-card',
+                carousel: '.offers-carousel',
+                prevBtn: '.offers-prev',
+                nextBtn: '.offers-next',
+                dotsContainer: '.offers-dots',
+                cardSelector: '.offer-card',
                 autoSlide: true
             });
         }
