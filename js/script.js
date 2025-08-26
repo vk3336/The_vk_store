@@ -66,25 +66,29 @@ function initBannerSlider() {
 // Mobile Menu Toggle
 const navLinks = document.getElementById('navLinks');
 const menuToggle = document.querySelector('.menu-toggle');
+const closeMenu = document.querySelector('.close-menu');
 const navItems = document.querySelectorAll('.nav-links a');
 
-function showMenu() {
-    navLinks.style.right = '0';
-    document.body.style.overflow = 'hidden';
-    menuToggle.classList.add('active');
-}
+// Make functions available globally
+window.showMenu = function() {
+    if (navLinks) {
+        navLinks.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+};
 
-function hideMenu() {
-    navLinks.style.right = '-300px';
-    document.body.style.overflow = 'auto';
-    menuToggle.classList.remove('active');
-}
+window.hideMenu = function() {
+    if (navLinks) {
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+};
 
 // Toggle mobile menu
 if (menuToggle) {
     menuToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (navLinks && navLinks.style.right === '0px') {
+        if (navLinks.classList.contains('active')) {
             hideMenu();
         } else {
             showMenu();
@@ -92,22 +96,38 @@ if (menuToggle) {
     });
 }
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navLinks) return;
-    if (!navLinks.contains(e.target) && (!menuToggle || !menuToggle.contains(e.target))) {
+// Close menu with close button
+if (closeMenu) {
+    closeMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         hideMenu();
-    }
-});
+        return false;
+    });
+}
 
 // Close mobile menu when clicking on a nav link
-navItems.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 992) {
+if (navItems.length > 0) {
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 992) {
+                hideMenu();
+            }
+        });
+    });
+}
+
+// Close menu when clicking outside
+if (navLinks) {
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            menuToggle && 
+            !menuToggle.contains(e.target)) {
             hideMenu();
         }
     });
-});
+}
 
 // WhatsApp Order Buttons
 document.addEventListener('DOMContentLoaded', function() {
