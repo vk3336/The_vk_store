@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Premium Products Carousel
     initCarousel({
         carousel: '.premium-carousel:not(.khakhra-carousel)',
-        prevBtn: '.prev-arrow:not(.branded-prev):not(.khakhra-prev):not(.offers-prev)',
-        nextBtn: '.next-arrow:not(.branded-next):not(.khakhra-next):not(.offers-next)',
         dotsContainer: '.carousel-dots:not(.branded-dots):not(.khakhra-dots):not(.offers-dots)',
         cardSelector: '.premium-card',
         autoSlide: true
@@ -23,8 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Branded Products Carousel
     initCarousel({
         carousel: '.branded-carousel',
-        prevBtn: '.branded-prev',
-        nextBtn: '.branded-next',
         dotsContainer: '.branded-dots',
         cardSelector: '.brand-card',
         autoSlide: true

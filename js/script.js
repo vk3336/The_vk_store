@@ -482,8 +482,6 @@ function loadKhakhraProducts() {
         if (typeof initCarousel === 'function') {
             initCarousel({
                 carousel: '.khakhra-carousel',
-                prevBtn: '.khakhra-prev',
-                nextBtn: '.khakhra-next',
                 dotsContainer: '.khakhra-dots',
                 cardSelector: '.premium-card',
                 autoSlide: true
