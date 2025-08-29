@@ -696,7 +696,15 @@ Our team will get back to you with the best offer shortly.`;
                             <h4>${product.name}</h4>
                             <p>${product.brand}</p>
                             <button class="whatsapp-btn" 
-                                data-message="I'm interested in ${encodeURIComponent(product.name)}. Please provide more details.">
+                                data-message="I'm interested in ${(product.name)} for bulk order. Could you please share:
+List of available products under this brand
+Minimum order quantity
+Available pack sizes
+Price details
+Your Details:
+My Name: __________
+Mobile Number: __________
+Thank you for your support! 🙏">
                                 <i class="fab fa-whatsapp"></i> Enquire Now
                             </button>
                         </div>
