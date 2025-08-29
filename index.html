@@ -257,11 +257,32 @@
                     <i class="fas fa-heart"></i>
                     <p>Our aim is not just selling products, but helping you spread happiness and kindness.</p>
                 </div>
-                <a href="https://wa.me/918866791095?text=Hi%20VK%20Store%2C%20I'd%20like%20to%20avail%20the%20special%20discount"
-                    class="whatsapp-order-btn">
+                <a href="#" class="whatsapp-order-btn" id="claimDiscountBtn">
                     <i class="fab fa-whatsapp"></i>
                     <span>Claim Your Discount</span>
                 </a>
+                <script>
+                    document.getElementById('claimDiscountBtn').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const discountMessage = `🎉 Claim Your Discount – The VK Store
+
+Hello! I'd like to claim my 5% Discount at The VK Store.
+My order is above ₹1000 and the reason is:
+• Birthday Celebration 🎂
+• Helping Others ❤️
+• Birds Feed 🐦
+• Special Occasion ✨
+
+Selected Reason: _____________________
+
+My Name: __________
+Mobile Number: __________
+
+Thank you for shopping with The VK Store! 🌟`;
+                        const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(discountMessage)}`;
+                        window.open(whatsappUrl, '_blank');
+                    });
+                </script>
             </div>
         </div>
     </section>
