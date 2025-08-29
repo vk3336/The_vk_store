@@ -290,18 +290,6 @@ const premiumProducts = [
         category: "Namkeen",
         rating: 4.3,
         reviews: 72
-    },
-    {
-        id: 12,
-        name: "Panipuri",
-        description: "Crispy puris perfect for making your favorite pani puri at home. Ready to fill with spicy water and chutneys.",
-        image: "images/namkeenproduct/panipuri.jpg",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Snacks",
-        rating: 4.8,
-        reviews: 105
     }
     
     
