@@ -1751,6 +1751,47 @@ scroll-snap-align: start;
     color: white;
 }
 
+/* Order Now Button */
+.order-now-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.order-now-btn i {
+    margin-right: 8px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.order-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.order-now-btn:active {
+    transform: translateY(1px);
+}
+
+.order-now-btn.full-width {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
 .whatsapp-order-btn i,
 .cta-button.primary[href*="whatsapp"] i,
 .cta-button[href*="whatsapp"] i,
