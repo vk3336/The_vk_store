@@ -148,7 +148,15 @@ function renderProducts(products) {
             const brand = button.getAttribute('data-brand');
             console.log(`WhatsApp button ${index + 1} clicked for brand:`, brand);
             
-            const message = `Hello, I'm interested in ${brand}. Could you please provide more details?`;
+            const message = `Hello, I'm interested in ${brand}.  Could you please share:
+List of available products under this brand
+Minimum order quantity
+Available pack sizes
+Price details
+Your Details:
+My Name: __________
+Mobile Number: __________
+Thank you for shopping with The Vk Store! 🙏`;
             const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
             console.log('Opening WhatsApp URL:', whatsappUrl);
             
