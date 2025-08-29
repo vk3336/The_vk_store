@@ -713,7 +713,7 @@ Our team will get back to you with the best offer shortly.`;
                     
                     if (product) {
                         const productData = JSON.parse(product.replace(/&#39;/g, "'"));
-                        message = `*Order Details – The VK Store*\n\n*Product:* ${productData.name}\n*Price:* ${productData.currentPrice} (${productData.discount} off)\n*Weight:* ${productData.weight || 'N/A'}\n\nPlease provide:\n- Your Name\n- Delivery Address\n- Mobile Number`;
+                        message = `🛒 *Order Details – The VK Store*\n\n*Product:* ${productData.name}\n*Price:* ${productData.currentPrice} (${productData.discount} off)\n*Weight:* ${productData.weight || '500gm'}\n\n📌 *To confirm your order, please provide:*\n- Your Order\n- Full Name\n- Delivery Address\n- Mobile Number\n\nThank you for shopping with The VK Store! 🌟`;
                     }
                     
                     const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
