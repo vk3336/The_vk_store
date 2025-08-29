@@ -1,7 +1,7 @@
 const products = [
     {
         id: 1,
-        name: "Mix chavana12",
+        name: "Mix chavana",
         description: "A perfect mix of sweet and sour flavors with roasted chana and spices. An irresistible snack for any time.",
         image: "images/namkeenproduct/mixchavana.avif",
         price: 250,
