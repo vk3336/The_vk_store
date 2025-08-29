@@ -1567,6 +1567,7 @@ scroll-snap-align: start;
 }
 
 /* WhatsApp Order Button */
+.header-whatsapp-btn,
 .whatsapp-order-btn {
     display: inline-flex;
     align-items: center;
@@ -1611,6 +1612,7 @@ scroll-snap-align: start;
 }
 
 /* Header Order Now button */
+.header .header-whatsapp-btn,
 .header .whatsapp-order-btn {
     width: auto;
     min-width: 120px;
@@ -1623,11 +1625,13 @@ scroll-snap-align: start;
     justify-content: center;
 }
 
+.header-whatsapp-btn i,
 .whatsapp-order-btn i {
     font-size: 18px;
     transition: transform 0.3s ease;
 }
 
+.header-whatsapp-btn::before,
 .whatsapp-order-btn::before {
     content: '';
     position: absolute;
@@ -1641,18 +1645,22 @@ scroll-snap-align: start;
     border-radius: 50px;
 }
 
+.header-whatsapp-btn:hover::before,
 .whatsapp-order-btn:hover::before {
     width: 100%;
 }
 
+.header-whatsapp-btn:hover i,
 .whatsapp-order-btn:hover i {
     transform: translateX(3px);
 }
 
+.header-whatsapp-btn:active,
 .whatsapp-order-btn:active {
     transform: translateY(2px);
 }
 
+.header-whatsapp-btn:hover,
 .whatsapp-order-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
