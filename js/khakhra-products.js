@@ -1,15 +1,7 @@
 const khakhraProducts = [
-    {
-        id: 'k1',
-        name: "Masala Khakhra",
-        description: "Crispy and spicy traditional Gujarati khakhra",
-        image: "images/namkeenproduct/masala-khakhra.jpg",
-        currentPrice: "₹100",
-        originalPrice: "₹130",
-        discount: "23% OFF",
-        weight: "500gm",
-        isPremium: true
-    },
+
+
+
     {
         id: 'k2',
         name: "Methi Khakhra",
@@ -22,10 +14,23 @@ const khakhraProducts = [
         isPremium: true
     },
     {
-        id: 'k3',
-        name: "Jeera Khakhra",
-        description: "Crunchy cumin flavored khakhra",
-        image: "images/namkeenproduct/jeerakhakhra.webp",
+        id: 'k1',
+        name: "Masala Khakhra",
+        description: "Crispy and spicy traditional Gujarati khakhra",
+        image: "images/namkeenproduct/masala-khakhra.jpg",
+        currentPrice: "₹100",
+        originalPrice: "₹130",
+        discount: "23% OFF",
+        weight: "500gm",
+        isPremium: true
+    },
+    
+   
+    {
+        id: 'k4',
+        name: "Plain Khakhra",
+        description: "Classic and simple plain khakhra",
+        image: "images/namkeenproduct/sadakhakhra.jpg",
         currentPrice: "₹100",
         originalPrice: "₹130",
         discount: "23% OFF",
@@ -33,10 +38,10 @@ const khakhraProducts = [
         isPremium: true
     },
     {
-        id: 'k4',
-        name: "Plain Khakhra",
-        description: "Classic and simple plain khakhra",
-        image: "images/namkeenproduct/sadakhakhra.jpg",
+        id: 'k3',
+        name: "Jeera Khakhra",
+        description: "Crunchy cumin flavored khakhra",
+        image: "images/namkeenproduct/jeerakhakhra.webp",
         currentPrice: "₹100",
         originalPrice: "₹130",
         discount: "23% OFF",

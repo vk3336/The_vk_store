@@ -1,5 +1,66 @@
 // Premium products data
 const premiumProducts = [
+
+    {
+        id: 26,
+        name: "Mix chavana",
+        description: "A perfect mix of sweet and sour flavors with roasted chana and spices. An irresistible snack for any time.",
+        image: "images/namkeenproduct/mixchavana.avif",
+        price: 250,
+        originalPrice: 280,
+        discount: "11% OFF",
+        category: "Namkeen",
+        rating: 4.7,
+        reviews: 94
+    },
+    {
+        id: 15,
+        name: "Ratlami Sev",
+        description: "Authentic Ratlami sev made with traditional spices and gram flour. A perfect blend of crispy texture and rich masala flavors.",
+        image: "images/namkeenproduct/ratlamisev.jpeg",
+        price: 250,
+        originalPrice: 280,
+        discount: "11% OFF",
+        category: "Namkeen",
+        rating: 4.8,
+        reviews: 112
+    },
+    {
+        id: 23,
+        name: "Jadi Sev",
+        description: "Thin and crispy sev with a perfect blend of spices. An all-time favorite snack that's perfect for any occasion.",
+        image: "images/namkeenproduct/jadisev.jpg",
+        price: 250,
+        originalPrice: 280,
+        discount: "11% OFF",
+        category: "Namkeen",
+        rating: 4.5,
+        reviews: 76
+    },
+    {
+        id: 24,
+        name: "Tikkhi Bundi",
+        description: "Crunchy bundi with a spicy twist. These small, round balls of gram flour are seasoned with aromatic spices for a flavorful experience.",
+        image: "images/namkeenproduct/tikkhibundi.webp",
+        price: 250,
+        originalPrice: 280,
+        discount: "11% OFF",
+        category: "Namkeen",
+        rating: 4.4,
+        reviews: 65
+    },
+    {
+        id: 25,
+        name: "Nailongathiya",
+        description: "Specialty namkeen made with a unique blend of spices and gram flour. A traditional recipe that brings out authentic flavors in every bite.",
+        image: "images/namkeenproduct/nailongadhiya.jpg",
+        price: 250,
+        originalPrice: 280,
+        discount: "11% OFF",
+        category: "Namkeen",
+        rating: 4.9,
+        reviews: 112
+    },
     {
         id: 1,
         name: "Bhakharvadi",
@@ -36,18 +97,7 @@ const premiumProducts = [
         rating: 4.5,
         reviews: 76
     },
-    {
-        id: 4,
-        name: "Roasted Chana",
-        description: "Crunchy roasted chana seasoned with traditional spices. A healthy and protein-rich snack option.",
-        image: "images/namkeenproduct/chana.webp",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Namkeen",
-        rating: 4.4,
-        reviews: 65
-    },
+    
     {
         id: 5,
         name: "Chana Dal",
@@ -121,28 +171,16 @@ const premiumProducts = [
         reviews: 88
     },
     {
-        id: 11,
-        name: "Puffed Rice (Mumra)",
-        description: "Light and crispy puffed rice, perfect for making quick snacks or enjoying as is with tea.",
-        image: "images/namkeenproduct/mumra.jpg",
+        id: 21,
+        name: "Tikkhi Bundi",
+        description: "Spicy and crunchy bundi made with gram flour and a special blend of spices. A perfect snack with tea.",
+        image: "images/namkeenproduct/tikkhibundi.webp",
         price: 250,
         originalPrice: 280,
         discount: "11% OFF",
         category: "Namkeen",
-        rating: 4.3,
-        reviews: 72
-    },
-    {
-        id: 12,
-        name: "Panipuri",
-        description: "Crispy puris perfect for making your favorite pani puri at home. Ready to fill with spicy water and chutneys.",
-        image: "images/namkeenproduct/panipuri.jpg",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Snacks",
-        rating: 4.8,
-        reviews: 105
+        rating: 4.6,
+        reviews: 89
     },
     {
         id: 13,
@@ -168,18 +206,7 @@ const premiumProducts = [
         rating: 4.7,
         reviews: 93
     },
-    {
-        id: 15,
-        name: "Ratlami Sev",
-        description: "Authentic Ratlami sev made with traditional spices and gram flour. A perfect blend of crispy texture and rich masala flavors.",
-        image: "images/namkeenproduct/ratlamisev.jpeg",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Namkeen",
-        rating: 4.8,
-        reviews: 112
-    },
+   
     {
         id: 16,
         name: "Sadi Sev",
@@ -217,18 +244,6 @@ const premiumProducts = [
         reviews: 75
     },
     {
-        id: 19,
-        name: "Salted Peanuts",
-        description: "Roasted peanuts with the perfect amount of salt. A classic and healthy snacking option.",
-        image: "images/namkeenproduct/saltedsing.jpg",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Namkeen",
-        rating: 4.5,
-        reviews: 83
-    },
-    {
         id: 20,
         name: "Tamtam",
         description: "Crunchy and spicy snack made with gram flour and spices. A perfect tea-time companion.",
@@ -241,46 +256,22 @@ const premiumProducts = [
         reviews: 79
     },
     {
-        id: 21,
-        name: "Tikkhi Bundi",
-        description: "Spicy and crunchy bundi made with gram flour and a special blend of spices. A perfect snack with tea.",
-        image: "images/namkeenproduct/tikkhibundi.webp",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Namkeen",
-        rating: 4.6,
-        reviews: 89
-    },
-    {
-        id: 22,
-        name: "Nailongadhiya",
-        description: "Specialty namkeen made with a unique blend of spices and gram flour. A traditional recipe that brings out authentic flavors in every bite.",
-        image: "images/namkeenproduct/nailongadhiya.jpg",
-        price: 250,
-        originalPrice: 280,
-        discount: "11% OFF",
-        category: "Namkeen",
-        rating: 4.9,
-        reviews: 118
-    },
-    {
-        id: 23,
-        name: "Jadi Sev",
-        description: "Thin and crispy sev with a perfect blend of spices. An all-time favorite snack that's perfect for any occasion.",
-        image: "images/namkeenproduct/jadisev.jpg",
+        id: 19,
+        name: "Salted Peanuts",
+        description: "Roasted peanuts with the perfect amount of salt. A classic and healthy snacking option.",
+        image: "images/namkeenproduct/saltedsing.jpg",
         price: 250,
         originalPrice: 280,
         discount: "11% OFF",
         category: "Namkeen",
         rating: 4.5,
-        reviews: 76
+        reviews: 83
     },
     {
-        id: 24,
-        name: "Tikkhi Bundi",
-        description: "Crunchy bundi with a spicy twist. These small, round balls of gram flour are seasoned with aromatic spices for a flavorful experience.",
-        image: "images/namkeenproduct/tikkhibundi.webp",
+        id: 4,
+        name: "Roasted Chana",
+        description: "Crunchy roasted chana seasoned with traditional spices. A healthy and protein-rich snack option.",
+        image: "images/namkeenproduct/chana.webp",
         price: 250,
         originalPrice: 280,
         discount: "11% OFF",
@@ -289,29 +280,31 @@ const premiumProducts = [
         reviews: 65
     },
     {
-        id: 25,
-        name: "Nailongathiya",
-        description: "Specialty namkeen made with a unique blend of spices and gram flour. A traditional recipe that brings out authentic flavors in every bite.",
-        image: "images/namkeenproduct/nailongadhiya.jpg",
+        id: 11,
+        name: "Puffed Rice (Mumra)",
+        description: "Light and crispy puffed rice, perfect for making quick snacks or enjoying as is with tea.",
+        image: "images/namkeenproduct/mumra.jpg",
         price: 250,
         originalPrice: 280,
         discount: "11% OFF",
         category: "Namkeen",
-        rating: 4.9,
-        reviews: 112
+        rating: 4.3,
+        reviews: 72
     },
     {
-        id: 26,
-        name: "Mix chavana",
-        description: "A perfect mix of sweet and sour flavors with roasted chana and spices. An irresistible snack for any time.",
-        image: "images/namkeenproduct/mixchavana.avif",
+        id: 12,
+        name: "Panipuri",
+        description: "Crispy puris perfect for making your favorite pani puri at home. Ready to fill with spicy water and chutneys.",
+        image: "images/namkeenproduct/panipuri.jpg",
         price: 250,
         originalPrice: 280,
         discount: "11% OFF",
-        category: "Namkeen",
-        rating: 4.7,
-        reviews: 94
+        category: "Snacks",
+        rating: 4.8,
+        reviews: 105
     }
+    
+    
 ];
 
 // Function to render premium products

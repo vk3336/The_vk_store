@@ -1,9 +1,14 @@
 // Branded Products Data
 const brandedProducts = [
     {
-        name: "Bablu Namkeen",
-        image: "images/brandedproduct/bablu.jpg",
-        brand: "Bablu"
+        name: "Britannia Products",
+        image: "images/brandedproduct/britania.png",
+        brand: "Britannia"
+    },
+    {
+        name: "Parle Products",
+        image: "images/brandedproduct/parle.png",
+        brand: "Parle"
     },
     {
         name: "Balaji Wafers",
@@ -11,29 +16,14 @@ const brandedProducts = [
         brand: "Balaji"
     },
     {
-        name: "Britannia Products",
-        image: "images/brandedproduct/britania.png",
-        brand: "Britannia"
+        name: "Surf Excel",
+        image: "images/brandedproduct/surfexcel.png",
+        brand: "Surf Excel"
     },
     {
         name: "Clinic Plus",
         image: "images/brandedproduct/clinicplus.avif",
         brand: "Clinic Plus"
-    },
-    {
-        name: "Dove Products",
-        image: "images/brandedproduct/dove.png",
-        brand: "Dove"
-    },
-    {
-        name: "Empire Products",
-        image: "images/brandedproduct/empire.png",
-        brand: "Empire"
-    },
-    {
-        name: "Kissan Products",
-        image: "images/brandedproduct/kissan.avif",
-        brand: "Kissan"
     },
     {
         name: "Lifebuoy Products",
@@ -46,29 +36,14 @@ const brandedProducts = [
         brand: "Lux"
     },
     {
-        name: "Parle Products",
-        image: "images/brandedproduct/parle.png",
-        brand: "Parle"
+        name: "Dove Products",
+        image: "images/brandedproduct/dove.png",
+        brand: "Dove"
     },
     {
-        name: "Ponds Products",
-        image: "images/brandedproduct/ponds.png",
-        brand: "Ponds"
-    },
-    {
-        name: "Ramdev Products",
-        image: "images/brandedproduct/ramdev.jpg",
-        brand: "Ramdev"
-    },
-    {
-        name: "Suhana Products",
-        image: "images/brandedproduct/suhana.png",
-        brand: "Suhana"
-    },
-    {
-        name: "Surf Excel",
-        image: "images/brandedproduct/surfexcel.png",
-        brand: "Surf Excel"
+        name: "Vim Bar",
+        image: "images/brandedproduct/vimbar.avif",
+        brand: "Vim"
     },
     {
         name: "Tresemme Hair Care",
@@ -76,10 +51,36 @@ const brandedProducts = [
         brand: "Tresemme"
     },
     {
-        name: "Vim Bar",
-        image: "images/brandedproduct/vimbar.avif",
-        brand: "Vim"
+        name: "Ponds Products",
+        image: "images/brandedproduct/ponds.png",
+        brand: "Ponds"
+    },
+    {
+        name: "Kissan Products",
+        image: "images/brandedproduct/kissan.avif",
+        brand: "Kissan"
+    },
+    {
+        name: "Empire Products",
+        image: "images/brandedproduct/empire.png",
+        brand: "Empire"
+    },
+    {
+        name: "Suhana Products",
+        image: "images/brandedproduct/suhana.png",
+        brand: "Suhana"
+    },
+    {
+        name: "Ramdev Products",
+        image: "images/brandedproduct/ramdev.jpg",
+        brand: "Ramdev"
+    },
+    {
+        name: "Bablu Namkeen",
+        image: "images/brandedproduct/bablu.jpg",
+        brand: "Bablu"
     }
+    
 ];
 
 // Add IDs to products for easier reference
