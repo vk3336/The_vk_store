@@ -3612,3 +3612,10 @@ scroll-snap-align: start;
         opacity: 0;
     }
 }
+/* Allow vertical scrolling on mobile while horizontal-swiping carousels */
+.premium-carousel,
+.offers-carousel,
+.khakhra-carousel,
+.branded {
+    touch-action: pan-y;
+}

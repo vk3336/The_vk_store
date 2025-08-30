@@ -80,7 +80,7 @@ window.showMenu = function() {
 window.hideMenu = function() {
     if (navLinks) {
         navLinks.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = '';
     }
 };
 

@@ -168,6 +168,7 @@ function initCarousel({
     carousel.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
         startX = e.touches[0].pageX - carousel.offsetLeft;
+        startY = e.touches[0].pageY;
         scrollLeft = carousel.scrollLeft;
         isDragging = true;
         carousel.style.scrollBehavior = 'auto';
@@ -176,10 +177,19 @@ function initCarousel({
     // Touch move
     carousel.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
-        e.preventDefault();
         const x = e.touches[0].pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 1.5; // Scroll faster
-        carousel.scrollLeft = scrollLeft - walk;
+        const y = e.touches[0].pageY;
+        const dx = x - startX;
+        const dy = y - startY;
+        // Only hijack scroll when horizontal intent dominates
+        if (Math.abs(dx) > Math.abs(dy)) {
+            e.preventDefault(); // keep passive:false only when truly horizontal
+            const walk = dx * 1.5;
+            carousel.scrollLeft = scrollLeft - walk;
+        } else {
+            // user intends to scroll vertically – stop dragging so page can scroll
+            isDragging = false;
+        }
     }, { passive: false });
     
     // Touch end
