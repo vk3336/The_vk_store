@@ -112,7 +112,7 @@
     <section class="premium-products section-padding">
         <div class="container">
             <div class="section-header text-center" id="products">
-                <span class="section-subtitle">Premium Selection</span>
+                <span class="section-subtitle">Diwali Special</span>
                 <h2 class="section-title">Our Premium Products</h2>
                 <p class="section-desc">Discover our handpicked selection of premium quality products</p>
             </div>
@@ -139,7 +139,7 @@
     <section class="premium-khakhra section-padding">
         <div class="container">
             <div class="section-header text-center">
-                <span class="section-subtitle">Premium Selection</span>
+                <span class="section-subtitle">Diwali Special</span>
                 <h2 class="section-title">Premium Khakhra</h2>
                 <p class="section-description">Experience the authentic taste of traditional Gujarati khakhras</p>
             </div>
@@ -734,7 +734,7 @@ Thank you for shopping with The Vk Store! 🙏">
                     
                     if (product) {
                         const productData = JSON.parse(product.replace(/&#39;/g, "'"));
-                        message = `🛒 *Order Details – The VK Store*\n\n*Product:* ${productData.name}\n*Price:* ${productData.currentPrice} (${productData.discount} off)\n*Weight:* ${productData.weight || '500gm'}\n\n📌 *To confirm your order, please provide:*\n- Your Order\n- Full Name\n- Delivery Address\n- Mobile Number\n\nThank you for shopping with The VK Store! 🌟`;
+                        message = `🛒 *Order Details – The VK Store*\n\n*Product:* ${productData.name}\n*Price:* ${productData.currentPrice} (${productData.discount} off)\n*Weight:* ${productData.weight || '500gm'}\n\n📌 *To confirm your order, please provide:*\n- Your Order\n- Full Name\n- Delivery Address\n- Mobile Number\n\n We wish you a very Happy Diwali! 🎇\n\n Thank you for shopping with The VK Store! 🌟`;
                     }
                     
                     const whatsappUrl = `https://wa.me/918866791095?text=${encodeURIComponent(message)}`;
