@@ -2361,7 +2361,10 @@ scroll-snap-align: start;
 .offers-carousel-container {
     position: relative;
     margin: 40px 0;
-    padding: 0 40px;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .offers-carousel {
@@ -2370,11 +2373,10 @@ scroll-snap-align: start;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 25px;
-    padding: 20px 0;
-    position: relative;
-    margin: 0 -15px;
+    padding: 15px 5px 25px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .offers-carousel::-webkit-scrollbar {
@@ -2382,17 +2384,47 @@ scroll-snap-align: start;
 }
 
 .offers-carousel .offer-card {
-    flex: 0 0 calc(25% - 20px);
-    scroll-snap-align: start;
-    background: rgba(255, 255, 255, 0.1);
+    flex: 0 0 calc(100% - 40px);
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 30px;
+    padding: 25px 20px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    min-width: 280px;
-    margin: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 0;
+    margin: 0 10px;
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .offers-carousel .offer-card {
+        flex: 0 0 calc(50% - 30px);
+    }
+}
+
+@media (min-width: 1201px) {
+    .offers-carousel .offer-card {
+        flex: 0 0 calc(25% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .offers-carousel .offer-card {
+        flex: 0 0 calc(100% - 40px);
+        margin: 0 10px;
+        padding: 20px 15px;
+    }
+    
+    .offers-carousel-container {
+        padding: 0 5px;
+    }
+    
+    .offers-carousel {
+        padding: 15px 5px 25px;
+    }
 }
 
 @media (max-width: 1200px) {
