@@ -372,10 +372,10 @@ function renderYashProducts(containerSelector = '.yash-products-grid') {
         <div class="yash-product-card" data-category="${product.category}" data-id="${product.id}">
             <div class="yash-product-badges">
                 ${product.isNew ? '<span class="yash-badge new">New</span>' : ''}
-                ${product.isBestSeller ? '<span class="yash-badge best-seller">Bestseller</span>' : ''}
+                ${product.isBestSeller ? '<span class="yash-badge best-seller">Bestseller</span>' : ''}&nbsp &nbsp &nbsp &nbsp
                 ${product.discount ? `<span class="yash-badge discount">${product.discount}</span>` : ''}
             </div>
-            <div class="yash-product-image">
+            <div class="yash-product-image" >
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
             </div>
             <div class="yash-product-content">
