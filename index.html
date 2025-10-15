@@ -73,6 +73,7 @@
                             <span>Offers</span>
                         </a>
                     </li>
+                    
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">
                             <i class="fas fa-headset"></i>
@@ -107,6 +108,27 @@
            
         </div>
     </div>
+
+    <!-- Special Yash Mathiya Section -->
+    <section class="yash-products section-padding" style="background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle" style="color: #e74c3c; font-weight: 600; letter-spacing: 1px;">✨ Diwali Exclusive ✨</span>
+                <h2 class="section-title" style="color: #2c3e50; margin: 10px 0 15px; font-size: 2.2rem;">Special Yash Mathiya</h2>
+                <div class="divider" style="height: 3px; width: 80px; background: #e74c3c; margin: 0 auto 20px; border-radius: 3px;"></div>
+                <p class="section-desc" style="color: #7f8c8d; max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">
+                    Handcrafted with love using traditional recipes, perfect for your Diwali celebrations
+                </p>
+            </div>
+            
+            <!-- Yash Products Grid -->
+            <div class="yash-products-container" style="max-width: 1000px; margin: 0 auto; padding: 0 15px;">
+                <div class="yash-products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 0 auto;"></div>
+            </div>
+            
+           
+        </div>
+    </section>
 
     <!-- Premium Products Section -->
     <section class="premium-products section-padding">
@@ -663,9 +685,17 @@ Our team will get back to you with the best offer shortly.`;
     <script src="js/products.js"></script>
     <script src="js/khakhra-products.js"></script>
     <script src="js/branded-products.js"></script>
+    <!-- Yash Products JS -->
+    <script src="js/yash-products.js"></script>
+
     <script>
         // Initialize carousels when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Yash products
+            if (typeof renderYashProducts === 'function') {
+                renderYashProducts();
+            }
+            
             // Initialize khakhra products carousel if container exists
             const khakhraCarousel = document.querySelector('.khakhra-carousel');
             if (khakhraCarousel) {
