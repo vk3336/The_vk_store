@@ -349,16 +349,17 @@ function renderYashProducts(containerSelector = '.yash-products-grid') {
     function createWhatsAppMessage(product) {
     const originalPrice = Math.round((product.price * 100) / (100 - parseInt(product.discount)));
     const price250gm = Math.round((product.price / 2) * 0.5);
-    const price500gm = Math.round(product.price * 0.5);
+    const price500gm = product.price; // This is the 500g price
+    const price1kg = product.price * 2; // Double the price for 1kg
     
     return `*Order Details – The VK Store*\n\n` +
            `*Product:* ${product.name}\n` +
            `*Original Price:* ₹${originalPrice}/KG\n` +
-           `*Discounted Price:* ₹${product.price}/KG\n` +
+           `*Discounted Price:* ₹${price500gm}/500GM\n` +
            `*Discount:* ${product.discount} OFF\n\n` +
            `*Available Packs:*\n` +
-           `• 250 GM Pack: ₹${price250gm}\n` +
-           `• 500 GM Pack: ₹${price500gm}\n\n` +
+           `• 500 GM Pack: ₹${price500gm}\n` +
+           `• 1 KG Pack: ₹${price1kg}\n\n` +
            `*Delivery Details (please fill in):*\n` +
            `*Your Order:* \n` +
            `*Name:* \n` +
