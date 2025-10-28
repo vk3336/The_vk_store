@@ -370,7 +370,7 @@ function renderPremiumProducts(containerSelector = '.premium-grid') {
             const price250gm = Math.round(pricePerKg * 0.25);
             const price500gm = Math.round(pricePerKg * 0.5);
             
-            const message = `🛍️ *Order Details – The VK Store*\n\n📦 *Product:* ${productName}\n💰 *Original Price:* ${originalPrice}\n🏷️ *Discounted Price:* ${currentPrice}\n🎁 *Discount:* ${discount}\n\n📊 *Available Packs:*\n• 250 GM Pack: ₹${price250gm}\n• 500 GM Pack: ₹${price500gm}\n\n📝 *Delivery Details (please fill in):*\n🛒 *Your Order:* \n👤 *Name:* \n🏠 *Address:* \n📱 *Mobile No:* \n\n🙏 We wish you a very Happy Diwali! 🎇\n\n Thank you for shopping with *The VK Store*! 💝`;
+            const message = `🛍️ *Order Details – The VK Store*\n\n📦 *Product:* ${productName}\n💰 *Original Price:* ${originalPrice}\n🏷️ *Discounted Price:* ${currentPrice}\n🎁 *Discount:* ${discount}\n\n📊 *Available Packs:*\n• 250 GM Pack: ₹${price250gm}\n• 500 GM Pack: ₹${price500gm}\n\n📝 *Delivery Details (please fill in):*\n🛒 *Your Order:* \n👤 *Name:* \n🏠 *Address:* \n📱 *Mobile No:* \n\n Thank you for shopping with *The VK Store*! 💝`;
             
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/918866791095?text=${encodedMessage}`, '_blank');

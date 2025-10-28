@@ -365,7 +365,7 @@ function renderYashProducts(containerSelector = '.yash-products-grid') {
            `*Name:* \n` +
            `*Address:* \n` +
            `*Mobile No:* \n\n` +
-           `We wish you a very Happy Diwali!  \n\n` +
+           
            `Thank you for shopping with *The VK Store*!  `;
 }
     // Render products
