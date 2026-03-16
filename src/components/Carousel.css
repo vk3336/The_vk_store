@@ -24,7 +24,7 @@
 .crsl-track::-webkit-scrollbar { display: none; }
 
 .crsl-item {
-  flex: 0 0 280px;
+  flex: 0 0 320px;
   scroll-snap-align: start;
   min-width: 0;
   display: flex;
