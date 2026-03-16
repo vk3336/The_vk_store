@@ -7,7 +7,7 @@ import BrandCard from '../components/BrandCard';
 import { namkeenProducts, khakhraProducts, brandedProducts, offerCards, WHATSAPP_NUMBER } from '../data/products';
 import './Home.css';
 
-const banners = ['/images/banner1.jpg', '/images/banner2.jpg'];
+const banners = ['/images/banner1.png', '/images/banner2.png'];
 
 function Banner() {
   const [idx, setIdx] = useState(0);
