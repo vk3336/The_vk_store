@@ -1,91 +1,88 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
+import './Carousel.css';
 
-export default function Carousel({ children, cardWidth = 300, gap = 20, autoPlay = true, interval = 4000 }) {
+export default function Carousel({ children }) {
   const trackRef = useRef(null);
   const [current, setCurrent] = useState(0);
-  const [total, setTotal] = useState(0);
-  const timerRef = useRef(null);
-
-  useEffect(() => {
-    setTotal(children?.length || 0);
-  }, [children]);
+  const items = Array.isArray(children) ? children : [children];
+  const total = items.length;
 
   const scrollTo = useCallback((index) => {
     const track = trackRef.current;
     if (!track) return;
-    const items = track.children;
-    if (!items[index]) return;
-    track.scrollTo({ left: items[index].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    const child = track.children[index];
+    if (!child) return;
+    track.scrollTo({ left: child.offsetLeft - track.offsetLeft, behavior: 'smooth' });
     setCurrent(index);
   }, []);
 
-  const next = useCallback(() => {
-    const n = (current + 1) % total;
-    scrollTo(n);
-  }, [current, total, scrollTo]);
+  const prev = () => scrollTo((current - 1 + total) % total);
+  const next = () => scrollTo((current + 1) % total);
 
-  const prev = useCallback(() => {
-    const n = (current - 1 + total) % total;
-    scrollTo(n);
-  }, [current, total, scrollTo]);
-
-  useEffect(() => {
-    if (!autoPlay || total < 2) return;
-    timerRef.current = setInterval(next, interval);
-    return () => clearInterval(timerRef.current);
-  }, [autoPlay, next, interval, total]);
-
-  const pause = () => clearInterval(timerRef.current);
-  const resume = () => {
-    if (!autoPlay) return;
-    timerRef.current = setInterval(next, interval);
-  };
-
-  // Sync dot on scroll
   const onScroll = () => {
     const track = trackRef.current;
     if (!track) return;
-    const items = Array.from(track.children);
     const scrollLeft = track.scrollLeft;
-    let closest = 0;
-    let minDist = Infinity;
-    items.forEach((item, i) => {
+    let closest = 0, minDist = Infinity;
+    Array.from(track.children).forEach((item, i) => {
       const dist = Math.abs(item.offsetLeft - track.offsetLeft - scrollLeft);
       if (dist < minDist) { minDist = dist; closest = i; }
     });
     setCurrent(closest);
   };
 
-  // Touch swipe
   const touchStart = useRef(0);
-  const onTouchStart = (e) => { touchStart.current = e.touches[0].clientX; pause(); };
+  const onTouchStart = (e) => { touchStart.current = e.touches[0].clientX; };
   const onTouchEnd = (e) => {
     const diff = touchStart.current - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
-    resume();
   };
 
   return (
-    <div className="carousel-wrap" onMouseEnter={pause} onMouseLeave={resume}>
-      <button className="carousel-btn prev" onClick={prev} aria-label="Previous">
+    <div className="crsl">
+      {/* Left button */}
+      <button
+        className="crsl-btn crsl-prev"
+        onClick={prev}
+        aria-label="Previous"
+        disabled={total <= 1}
+      >
         <i className="fas fa-chevron-left" />
       </button>
+
+      {/* Track */}
       <div
         ref={trackRef}
-        className="carousel-track"
+        className="crsl-track"
         onScroll={onScroll}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        {children}
+        {items.map((child, i) => (
+          <div key={i} className="crsl-item">{child}</div>
+        ))}
       </div>
-      <button className="carousel-btn next" onClick={next} aria-label="Next">
+
+      {/* Right button */}
+      <button
+        className="crsl-btn crsl-next"
+        onClick={next}
+        aria-label="Next"
+        disabled={total <= 1}
+      >
         <i className="fas fa-chevron-right" />
       </button>
+
+      {/* Dots */}
       {total > 1 && (
-        <div className="carousel-dots">
-          {Array.from({ length: total }).map((_, i) => (
-            <button key={i} className={`dot${i === current ? ' active' : ''}`} onClick={() => scrollTo(i)} aria-label={`Go to slide ${i + 1}`} />
+        <div className="crsl-dots">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              className={`crsl-dot${i === current ? ' active' : ''}`}
+              onClick={() => scrollTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
           ))}
         </div>
       )}

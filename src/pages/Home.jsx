@@ -163,7 +163,7 @@ export default function Home() {
             <h2 className="section-title">Premium <span>Products</span></h2>
             <p className="section-desc">Handpicked selection of premium quality namkeens & snacks</p>
           </div>
-          <Carousel autoPlay interval={3500}>
+          <Carousel>
             {previewProducts.map(p => <ProductCard key={p.id} product={p} />)}
           </Carousel>
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
@@ -182,7 +182,7 @@ export default function Home() {
             <h2 className="section-title">Premium <span>Khakhra</span></h2>
             <p className="section-desc">Authentic taste of traditional Gujarati khakhras</p>
           </div>
-          <Carousel autoPlay interval={4000}>
+          <Carousel>
             {khakhraProducts.map(p => <KhakhraCard key={p.id} product={p} />)}
           </Carousel>
         </div>
@@ -196,7 +196,7 @@ export default function Home() {
             <h2 className="section-title">Branded <span>Products</span></h2>
             <p className="section-desc">Top brands in bulk/bunch at great prices</p>
           </div>
-          <Carousel autoPlay interval={3000}>
+          <Carousel>
             {brandedProducts.map(p => <BrandCard key={p.id} product={p} />)}
           </Carousel>
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
@@ -215,7 +215,7 @@ export default function Home() {
             <h2 className="section-title">Exclusive <span>5% Discount</span></h2>
             <p className="section-desc">We believe in spreading happiness and kindness</p>
           </div>
-          <Carousel autoPlay interval={4500}>
+          <Carousel>
             {offerCards.map(o => (
               <div key={o.title} className="offer-card">
                 <div className="offer-icon"><i className={`fas ${o.icon}`} /></div>
