@@ -138,10 +138,10 @@
   .crsl-next { grid-column: 3; grid-row: 1; }
   .crsl-dots { grid-column: 1 / -1; grid-row: 2; }
 
-  .crsl-item { flex: 0 0 calc(100% - 4px); }
+  .crsl-item { flex: 0 0 calc(100% - 4px); max-width: 300px; }
 }
 
 @media (max-width: 480px) {
   .crsl-btn { width: 38px; height: 38px; font-size: 0.85rem; }
-  .crsl-item { flex: 0 0 calc(100% - 4px); }
+  .crsl-item { flex: 0 0 calc(100% - 4px); max-width: 300px; }
 }
