@@ -141,7 +141,27 @@
   .crsl-item { flex: 0 0 calc(100% - 4px); max-width: 300px; }
 }
 
-@media (max-width: 480px) {
-  .crsl-btn { width: 38px; height: 38px; font-size: 0.85rem; }
-  .crsl-item { flex: 0 0 calc(100% - 4px); max-width: 300px; }
+/* Wide variant for premium/khakhra carousels */
+.crsl--wide .crsl-item { flex: 0 0 360px; }
+
+@media (max-width: 768px) {
+  .crsl--wide {
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    grid-template-rows: auto auto;
+    gap: 8px 6px;
+    align-items: center;
+  }
+  .crsl--wide .crsl-prev { grid-column: 1; grid-row: 1; }
+  .crsl--wide .crsl-track { grid-column: 2; grid-row: 1; padding: 10px 0 16px; }
+  .crsl--wide .crsl-next { grid-column: 3; grid-row: 1; }
+  .crsl--wide .crsl-dots { grid-column: 1 / -1; grid-row: 2; }
+
+  .crsl--wide .crsl-prev,
+  .crsl--wide .crsl-next {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+  .crsl--wide .crsl-item { flex: 0 0 calc(100% - 4px); }
 }

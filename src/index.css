@@ -193,13 +193,13 @@ img { max-width: 100%; height: auto; }
 }
 
 .product-card .img-wrap {
-  height: 220px;
+  height: 170px;
   background: var(--bg2);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 16px;
+  padding: 12px;
 }
 .product-card .img-wrap img {
   max-height: 100%;
@@ -210,7 +210,7 @@ img { max-width: 100%; height: auto; }
 .product-card:hover .img-wrap img { transform: scale(1.08); }
 
 .product-card .card-body {
-  padding: 18px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -432,7 +432,7 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) {
   .section { padding: 50px 0; }
   .section-header { margin-bottom: 32px; }
-  .product-card .img-wrap { height: 190px; }
+  .product-card .img-wrap { height: 150px; }
 }
 
 @media (max-width: 480px) {
@@ -440,8 +440,8 @@ img { max-width: 100%; height: auto; }
   .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
   .section-desc { font-size: 0.88rem; }
   .btn-primary, .btn-outline { font-size: 0.88rem; padding: 10px 20px; }
-  .product-card .img-wrap { height: 180px; }
-  .product-card .card-body { padding: 14px; }
+  .product-card .img-wrap { height: 140px; }
+  .product-card .card-body { padding: 10px; }
   .product-card .card-body h3 { font-size: 0.95rem; }
   .pack-info { font-size: 0.8rem; padding: 7px 10px; }
   .price-current { font-size: 1.1rem; }

@@ -163,7 +163,7 @@ export default function Home() {
             <h2 className="section-title">Premium <span>Products</span></h2>
             <p className="section-desc">Handpicked selection of premium quality namkeens & snacks</p>
           </div>
-          <Carousel>
+          <Carousel className="crsl--wide">
             {previewProducts.map(p => <ProductCard key={p.id} product={p} />)}
           </Carousel>
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
@@ -182,7 +182,7 @@ export default function Home() {
             <h2 className="section-title">Premium <span>Khakhra</span></h2>
             <p className="section-desc">Authentic taste of traditional Gujarati khakhras</p>
           </div>
-          <Carousel>
+          <Carousel className="crsl--wide">
             {khakhraProducts.map(p => <KhakhraCard key={p.id} product={p} />)}
           </Carousel>
         </div>

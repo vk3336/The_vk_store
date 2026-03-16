@@ -1,7 +1,7 @@
 import { useRef, useState, useCallback } from 'react';
 import './Carousel.css';
 
-export default function Carousel({ children }) {
+export default function Carousel({ children, className = '' }) {
   const trackRef = useRef(null);
   const [current, setCurrent] = useState(0);
   const items = Array.isArray(children) ? children : [children];
@@ -39,7 +39,7 @@ export default function Carousel({ children }) {
   };
 
   return (
-    <div className="crsl">
+    <div className={`crsl ${className}`}>
       {/* Left button */}
       <button
         className="crsl-btn crsl-prev"
