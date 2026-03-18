@@ -259,30 +259,6 @@ export const namkeenProducts = [
     rating: 4.4,
     reviews: 65,
   },
-  {
-    id: 22,
-    name: "Puffed Rice (Mumra)",
-    description: "Light and crispy puffed rice, perfect for quick snacks.",
-    image: "/images/namkeenproduct/mumra.jpg",
-    price: 230,
-    originalPrice: 280,
-    discount: "18% OFF",
-    category: "Namkeen",
-    rating: 4.3,
-    reviews: 72,
-  },
-  {
-    id: 23,
-    name: "Pani Puri",
-    description: "Crispy puri shells for the classic Indian street food.",
-    image: "/images/namkeenproduct/panipuri.jpg",
-    price: 230,
-    originalPrice: 280,
-    discount: "18% OFF",
-    category: "Namkeen",
-    rating: 4.6,
-    reviews: 90,
-  },
 ];
 
 export const khakhraProducts = [
